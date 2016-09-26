@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Untitled</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	 <script type="text/javascript">  
+
+$(document).ready(function() {  
+  
+    //Default Action  
+    $(".tab_content").hide(); //Hide all content  
+    $("ul.nav-tabs li:first a").addClass("active").show(); //Activate first tab  
+    $(".tab_content:first").show(); //Show first tab content  
+      
+    //On Click Event  
+    $("ul.nav-tabs li").click(function() {  
+        $("ul.nav-tabs li a").removeClass("active"); //Remove any "active" class  
+        $(this).find("a").addClass("active"); //Add "active" class to selected tab  
+        $(".tab_content").hide(); //Hide all tab content  
+        var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content  
+        $(activeTab).fadeIn(); //Fade in the active content  
+        return false;  
+    });  
+  
+});  
+
+</script> 
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/logo.svg" alt="" /></span>
+						<h1><font size="10px" style="    margin-right: 17px;">SEI</font>科创信息平台</h1>
+						<p></p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="nav nav-tabs">
+							<li><a href="#signup" class="active">注册</a></li>
+							<li><a href="#login">登录</a></li>
+					
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Signup -->
+							<section id="signup" class="tab_content main ">
+									<!-- Form -->
+										<form method="post" action="#">
+											<div class="row uniform">
+												<div class="6u 12u$(xsmall)">
+													<input type="text" name="demo-name" id="demo-name" value="" placeholder="姓名" />
+												</div>
+												<div class="6u$ 12u$(xsmall)">
+													<input type="email" name="demo-email" id="demo-email" value="" placeholder="邮箱" />
+												</div>
+												<div class="12u$">
+													<input type="password" name="demo-password" id="demo-password" value="" placeholder="密码" />
+												</div>
+												<div class="12u$">
+													<input type="password" name="demo-password" id="demo-password" value="" placeholder="确认密码" />
+												</div>
+												<div class="6u 12u$(xsmall)">
+													<input type="text" name="demo-" id="demo-" value="" placeholder="验证码" />
+												</div>
+												<div class="12u$">
+													<ul class="actions vertical">
+														<li><input type="submit" value="注册" class="special fit" /></li>
+														<li><input type="reset" value="清空" class=" fit"/></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+
+							</section>
+
+						<!-- First Section -->
+							<section id="login" class="tab_content main special">
+								<!-- Form -->
+										<form method="post" action="#">
+											<div class="row uniform">
+												
+												<div class="12u$">
+													<input type="email" name="demo-email" id="demo-email" value="" placeholder="邮箱" />
+												</div>
+												<div class="12u$">
+													<input type="password" name="demo-password" id="demo-password" value="" placeholder="密码" />
+												</div>
+											
+												<div class="12u$">
+													<ul class="actions vertical">
+														<li><input type="submit" value="登录" class="button special fit" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+							</section>
+
+
+					</div>
+
+					
+
+			</div>
+			<!-- Footer -->
+					<footer id="footer">
+						<!-- <section>
+							<h2>SEI 科创信息平台</h2>
+							<p>版权所有 华东师范大学计算机科学与软件学院</p>
+							
+						</section>
+						<section>
+							<h2>合作企业</h2>
+							<ul class="actions">
+								<li><a href="#" >思科中国</a></li>
+								<li><a href="#" >微软中国</a></li>
+
+							</ul>
+						</section>
+						<section>
+							<h2>友情链接</h2>
+							<dl class="alt">
+								<dd><a href="#" >学工部</a></dd>
+								<dd><a href="#" >公共数据库</a></dd>
+								<dd><a href="#" >创新实践基地</a></dd>
+							</dl>
+							
+						</section>
+
+						<section>
+							<h2>Etiam feugiat</h2>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+								<dt>Phone</dt>
+								<dd>(000) 000-0000 x 0000</dd>
+								<dt>Email</dt>
+								<dd><a href="#">information@untitled.tld</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+ -->						<p class="copyright">&copy;2015 - SEI ECNU. All Rights Reserved.
+
+.</p>
+					</footer>
+
+	
+	</body>
+</html>

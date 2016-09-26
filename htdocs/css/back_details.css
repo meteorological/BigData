@@ -1,0 +1,24 @@
+label {
+    font-size: 1.2em;
+}
+
+input, select, textarea {
+    max-width: 100%;
+}
+
+@media (min-width: 800px) {
+    .sidebar {
+        position: fixed;
+        padding: 9px 0;
+        position: fixed;
+        top: 60px;
+        width: 10%;
+
+    }
+
+    .main {
+        position: relative;
+        margin-left: 16.666667%;
+    }
+
+}
