@@ -1,0 +1,66 @@
+#myCarousel {
+    margin-top: 1em;
+}
+
+.article-list {
+    line-height: 1.5em;
+}
+
+.article-list li {
+    list-style: none;
+    clear: both;
+    margin-top: 1em;
+}
+
+.head a,
+.article a,
+.article-list > ul > li a {
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px dashed #999;
+}
+
+.article-list > ul > li > small > a {
+    border-bottom: none;
+}
+
+.head a:hover,
+.article a:hover,
+.article-list > ul > li a:hover {
+    color: #428bca;
+    border-bottom: none;
+}
+
+.article-list > ul > li > small {
+    color: gray;
+    margin-left: 2em;
+}
+
+.article-list li p {
+    float: right;
+    margin-left: 1em;
+}
+
+.class-list {
+    margin-top: 4em;
+}
+
+.page-header small {
+    color: #999;
+    margin-left: 0.5em;
+}
+
+.page-header button {
+    color: #999;
+    float: right;
+}
+
+.nav-slide {
+    margin-top: 4em;
+}
+
+.article img {
+    max-width: 50em;
+    height: auto;
+}
+  

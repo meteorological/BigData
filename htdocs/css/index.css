@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+.head a {
+    color: #FFF;
+}
+
+.footer {
+    color: #999;
+    padding-top: 6px;
+    overflow: hidden;
+    border-top: 1px dashed #DDD;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.dropdown-menu {
+    min-width: 250px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.head p {
+    color: #FFF;
+}
+
+.footer a {
+    color: #999;
+}
+
+.message {
+    border-width: 1px;
+    border-color: #003;
+    border-style: solid;
+}
+
+.house {
+}
+
+#content {
+    background-color: #FFF;
+}
+
+#vnavbar {
+    background-color: #FFF;
+    border-bottom-style: groove;
+    border-bottom-color: #003;
+}
