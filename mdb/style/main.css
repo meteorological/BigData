@@ -86,6 +86,39 @@
 .has-regist-box {width:320px;text-align:center;}
 .has-regist-box .a {font-size:18px;color:#666;margin-top:110px;}
 .has-regist-box .b {margin-top:15px;}
+/*注册成功页面*/
+.reg-success {padding:70px 0 60px;}
+.reg-success-title {text-align:center;margin:0 0;}
+.reg-success-title h3 {display:inline-block;height:46px;padding-left:72px;background:url(../images/icon-reg-success.png) 0 center no-repeat;font-size:28px;color:#303030;line-height:46px;}
+.info-complete {width:600px;margin:0 auto 0px;}
+.go-complete {height:320px;width:350px;}
+.go-complete a {display:block;width:250px;height:260px;padding:28px 19px 0;border:1px solid #dadada;border-radius:5px;font-size:0;margin:50px 160px;}
+.complete-head {color:#7180b2;font-size:18px;margin-bottom:40px;text-align:center;}
+.complete-img {margin-bottom:40px;}
+.complete-img img {text-align:center;margin-left:80px;vertical-align:middle;border:0;max-width:100%;}
+.complete-foot {border-radius:8px;width:200px;height:60px;background:#dae5ff;margin-left:25px;text-align:center;}
+.complete-foot p {text-align:center;line-height:60px;color:#4877ed;font-size:25px;}
+.reg-success-foot {text-align:center;font-size:16px;color:#303030;}
+/*完善资料页面*/
+.personal-box {padding:38px 0 60px;}
+.personal-box-top {overflow:hidden;margin:0 0 28px 340px;}
+.personal-top-img {float:left;width:72px;height:92px;}
+.personal-top-icon {display:inline-block;width:57px;height:57px;background:url(../images/reg-success1.png) no-repeat;margin-top:10px;}
+.personal-top-info {margin-left:97px;margin-top:15px;}
+.personal-top-info .a {font-size:18px;color:#303030;font-weight:bold;margin-bottom:5px;}
+.personal-top-info .b {font-size:14px;color:#303030;}
+.personal-box-form {padding-left:230px;}
+.personal-form-list li {margin-bottom:20px;}.personal-form-title {float:left;width:175px;text-align:right;line-height:40px;font-size:15px;color:#666;font-weight:bold;}
+.form1-title em {color:#fc0704;margin-right:2px;}
+.reg-submit {padding-left:189px; padding-top:20px;}
+.reg-submit .btn-blue-big {width:350px;padding:0;}
+.my-select {position:relative;z-index:98;cursor:default;text-decoration:none;font-size:14px;display:inline-block;vertical-align:middle;}
+.my-select .my-value {position:relative;height:40px;}
+.my-select .my-value label {border:1px solid #e5e5e5;border-radius:2px;line-height:38px;height:38px;color:#2a3336;padding:0 10px;background:#fff;display:block;overflow:hidden;word-break:break-all;}
+.my-select .my-value em {position:absolute;right:1px;top:1px;height:36px;width:36px;background:url(../images/my-select-arr.png) center center no-repeat;}
+.my-select .my-option {position:absolute;top:40px;left:0;width:100%;background-color:#fff;}
+.my-select dl {overflow-y:auto;overflow-x:hidden;zoom:1;border:1px solid #e5e5e5;margin-top:-1px;}
+.my-select dd {height:38px;line-height:38px;padding:0 10px;background:#fff;overflow:hidden;border-top:1px solid #dedede;width:100%;margin-top:-1px;}
 /*登录页面*/
 .login-box {height:533px;background:url(../images/idx-banner.jpg) center 0 no-repeat;}
 .login-form {float:right;margin:55px 53px 0 0;background-color:rgba(255,255,255,95);border-radius:4px;width:378px;height:424px;padding:2px;box-shadow:2px -2px 5px #4d91cd;}
@@ -116,3 +149,4 @@
 .user-cnt-dtl .u-info {overflow:hidden;}
 .user-cnt-dtl .u-info li {float:left;margin-right:37px;font-size:12px;color:#fff;}
 .icon-u-phone {background-image:url(../images/icon-u-phone.png) 0 center no-repeat;padding-left:20px;line-height:18px;}
+.icon-u-mail {background-image:url(../images/icon-u-mail.png) 0 center no-repeat;padding-left:20px;line-height:18px;}
