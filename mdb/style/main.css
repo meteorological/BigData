@@ -136,7 +136,7 @@
 .form-list-submit .btn-red-big {display:block;}
 .go-regist {overflow:hidden;}
 .go-regist .now-regist {display:inline-block;padding-right:23px;font-size:16px;color:#ee1818;background:url(../images/now-reg-btn.png) right center no-repeat;}
-/*个人中心主页*/
+/*个人中心*/
 .user-cnt-top {height:190px;background:url(../images/user-cnt-top.jpg) center 0 no-repeat;margin-bottom:30px;}
 .user-cnt-head {float:left;margin:45px 30px 0 20px;width:104px;height:100px;}
 .user-cnt-head img {width:100px;height:100px;border:2px solid #fff;border-radius:50%;box-shadow:0 8px 8px #c6cfd1;}
@@ -145,8 +145,32 @@
 .user-cnt-dtl .u-name h3 {font-size:24px;color:#fff;margin-right:20px;float:left;line-height:26px;}
 .user-cnt-dtl .u-school {font-size:12px;color:#fff;margin-bottom:15px;}
 .user-cnt-dtl .u-school span {vertical-align:middle;}
-.user-cnt-dtl .u-school em {display:inline-block;height:10px;margin:0 16px;border-left:1px solid #7fa0f2;font-size:0;vertical-align:,middle}
+.user-cnt-dtl .u-school em {display:inline-block;height:10px;margin:0 16px;border-left:1px solid #7fa0f2;font-size:0;vertical-align:middle}
 .user-cnt-dtl .u-info {overflow:hidden;}
 .user-cnt-dtl .u-info li {float:left;margin-right:37px;font-size:12px;color:#fff;}
-.icon-u-phone {background-image:url(../images/icon-u-phone.png) 0 center no-repeat;padding-left:20px;line-height:18px;}
-.icon-u-mail {background-image:url(../images/icon-u-mail.png) 0 center no-repeat;padding-left:20px;line-height:18px;}
+.icon-u-phone, .icon-u-mail {padding-left:24px;background-repeat:no-repeat;background-position:0 center;line-height:18px;}
+.icon-u-phone {background-image:url(../images/icon-u-phone.png);padding-left:20px;}
+.icon-u-mail {background-image:url(../images/icon-u-mail.png);}
+.user-cnt-r {float:left;width:240px;height:112px;margin-top:40px;overflow:hidden;}
+.user-edit {width:117px;height:30px;margin-top:65px;}
+.user-wp-main {width:966px;margin-left:70px;}
+.user-wp-title {padding-bottom:10px;border-bottom:1px solid #e5e5e5;margin:40px 0 20px;}
+.user-wp-title h4 {float:left;font-size:16px;color:#2a3336;font-weight:bold;}
+.user-wp-info {overflow:hidden;}
+.user-wp-info .title {font-size:14px;color:red;margin-left:250px;}
+.my-project-form {width:100%;margin-left:120px;}
+.my-project-form td {padding:0 6px 20px;font-size:14px;color:#666666;}
+.my-project-form .label {position:relative;display:inline-block;float:right;font-size:15px;font-weight:bold;color:#666666;text-align:right;margin-top:10px;}
+.my-project-form em {color:#fe5656;margin-right:5px;}
+.my-project-form textarea {border:1px solid #dadada;padding:10px;font-size:14px;line-height:1.5em;height:150px;margin-top:10px;}
+.my-project-form .textarea-tip {line-height:25px;text-align:right;color:#a9a9a9;}
+.form-submit a {height:36px;line-height:36px;padding:0 30px 0;width:190px;margin-left:180px;margin-bottom:50px;}
+.pg-wrp {overflow:hidden;}
+.my-project-form .upload-btn {width:98px;height:28px;position:relative;overflow:hidden;margin:10px 0;margin-right:10px;}
+.my-project-form .upload-file {position:absolute;left:0;top:0;font-size:50px;cursor:pointer;opacity:0;}
+.upload-tip {font-size:12px;color:#a9a9a9;padding:5px 0;margin-top:10px;}
+.file-list ul{overflow:hidden;}
+.file-list li {float:left;width:121px;height:130px;margin:0 30px 13px 0;}
+.file-list li .file-pic {width:109px;height:100px;border:1px solid #e5e5e5;background:#f4f4f4;margin-bottom:10px;}
+.file-list li .file-pic img {width:109px;height:100px;}
+.file-list li .file-name {font-size:12px;color:#323a45;width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;}
