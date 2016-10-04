@@ -19,7 +19,7 @@
         <p><?= $name ?></p>
     <?php endif;
     if(!isset($name)):?>
-        <a href="<?php echo site_url('bigdata/signup/'); ?>">请登录</a>
+        <a href="<?php echo site_url('account/index/'); ?>">请登录</a>
     <?php endif; 
 ?>
 </div>

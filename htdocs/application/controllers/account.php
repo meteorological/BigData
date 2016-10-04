@@ -12,6 +12,11 @@ class Account extends CI_Controller
         $this->load->library('session');
     }
 
+    public function index(){
+        //$data['type']='login';
+        $this->load->view('account/regsuccess');
+    }
+
     /**
 	 *前台注册按钮触发事件
 	 */
@@ -23,7 +28,16 @@ class Account extends CI_Controller
 		//向注册邮箱发送激活邮件
 		$this->mail_send($userdata);
 		//跳转到注册页面
-		$this->load->view('bigdata/index');
+		$this->load->view('account/register');
+	}
+
+	public function register(){
+		$this->load->view('account/register');
+	}
+
+	public function login(){
+		//跳转到注册页面
+		$this->load->view('account/login');
 	}
 
 	/**
@@ -31,19 +45,19 @@ class Account extends CI_Controller
 	 *@param $userdata
 	 */
 	private function info_standard($userdata){
-		$userdata['username'] = stripslashes(trim($userdata['username']));
+		/*$userdata['username'] = stripslashes(trim($userdata['username']));*/
 		$userdata['email'] = trim($userdata['email']);		
 		//检测注册email是否存在	
-		$query = $this->user->select_by_username($userdata['email']);
+		$query = $this->user->select_by_email($userdata['email']);
 		if(count($query->result_array())!=0){
 			show_error("邮箱已存在，请直接登陆");
 		}
 		if(!preg_match("/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/",$userdata['email'])){
 			show_error("邮箱格式不正确");
 		}
-		if($userdata['password']!=$userdata['password_confirm']){
+/*		if($userdata['password']!=$userdata['password_confirm']){
 			show_error("两次密码输入不一致");
-		}
+		}*/
 		if(strlen($userdata['password'])<6){
 			show_error("密码长度不能小于6位");
 		}
@@ -53,15 +67,16 @@ class Account extends CI_Controller
 		if(!preg_match("/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/",$userdata['password'])){
 			show_error("密码需要由字母和数组组成");
 		}
-		if($userdata['identifying_code']!=$this->session->userdata('verification')){
+		if($userdata['code']!=$this->session->userdata('verification')){
 			show_error("验证码不正确");
 		}
 		$userdata['password'] = md5(trim($userdata['password']));
-		unset($userdata['password_confirm']);
-		unset($userdata['identifying_code']);
+		/*unset($userdata['password_confirm']);*/
+		unset($userdata['code']);
+		unset($userdata['checkbox']);
 		$userdata['createtime']=time();
 		//创建用于激活识别码
-		$userdata['token'] = md5($userdata['username'].$userdata['password'].$userdata['createtime']);
+		$userdata['token'] = md5($userdata['email'].$userdata['password'].$userdata['createtime']);
 		//激活码过期时间为24小时 
 		$userdata['token_exptime'] = time()+60*60*24;
 		return $userdata;
@@ -72,7 +87,7 @@ class Account extends CI_Controller
 	 *@param $userdata
 	 */
 	private function mail_send($userdata){
-		include_once("base_url('libraries/smtp.class.php')");
+		include_once('smtp.class.php');
 		//SMTP服务器
 		$smtpserver = "smtp.163.com"; 
 		//SMTP服务器端口
@@ -94,7 +109,7 @@ class Account extends CI_Controller
     	//激活邮件主题
     	$emailsubject = "‘气象+大数据应用’创新创业大赛账号激活";
     	//激活邮件正文
-    	$emailbody = "亲爱的".$userdata['username']."：<br/>感谢您注册‘气象+大数据应用’创新创业大赛官方网站帐号。<br/>请点击下列链接激活您的帐号。<br/><a href='http://192.168.31.185:8088/account/verify/?verify=".$userdata['token']."' target='_blank'>http://localhost:8088/account/verify/?verify=".$userdata['token']."</a><br/>如果以上链接无法点击，请将它复制到你的浏览器地址栏中进入访问，该链接24小时内有效。<br/>如果此次激活请求非你本人所发，请忽略本邮件。<br/><p style='text-align:right'></p><p>‘气象+大数据应用’创新创业大赛组委会</p>";
+    	$emailbody = "亲爱的用户"/*.$userdata['username'].*/."：<br/>感谢您注册‘气象+大数据应用’创新创业大赛官方网站帐号。<br/>请点击下列链接激活您的帐号。<br/><a href='http://172.20.10.3:8090/account/verify/?verify=".$userdata['token']."' target='_blank'>http://localhost:8088/account/verify/?verify=".$userdata['token']."</a><br/>如果以上链接无法点击，请将它复制到你的浏览器地址栏中进入访问，该链接24小时内有效。<br/>如果此次激活请求非你本人所发，请忽略本邮件。<br/><p style='text-align:right'></p><p>‘气象+大数据应用’创新创业大赛组委会</p>";
     	$rs = $smtp->sendmail($smtpemailto, $smtpemailfrom, $emailsubject, $emailbody, $emailtype);
 		if($rs==1){
 			return 1;	
@@ -116,13 +131,16 @@ class Account extends CI_Controller
 			}else{
 				$query[0]['status']=1;
 				$this->user->active($query[0]);
-				$msg = '已激活账号!';
+				$msg = '已激活账号!';			
 			}
 		}else{
 			show_error('未知错误');	
 		}
+		$data['name']=$query[0]['name'];
+		$this->session->set_userdata('user_id',$query[0]['id']);
+        $this->session->set_userdata('user_name', $query[0]['name']);
 		echo "<script>alert('$msg');</script>";
-		$this->load->view('bigdata/index');
+		$this->load->view('account/regsuccess',$data);
 	}
 
 	/**
@@ -181,9 +199,12 @@ class Account extends CI_Controller
     /**
 	 *前台登陆按钮触发事件
 	 */
-    public function login(){
+    public function log_in(){
+    	if($_POST['code']!=$this->session->userdata('verification')){
+			show_error("验证码不正确");
+		}
     	//检测email是否存在	
-		$query = $this->user->select_by_email($_POST['login-email'])->result_array();
+		$query = $this->user->select_by_email($_POST['username'])->result_array();
 		if(count($query)==0){
 			show_error("邮箱不存在");
 		}
@@ -195,7 +216,15 @@ class Account extends CI_Controller
 		}
         $data['bigdata']=$this->bigdata->get_query(-1,-1,1);
 		$data['name']=$query[0]['username'];
-        $this->session->set_userdata('user',$data['name']);
+        $this->session->set_userdata('user_id',$data['id']);
+        $this->session->set_userdata('user_name', $data['name']);
         $this->load->view('bigdata/data', $data);
+    }
+
+    public function log_out(){
+    	$this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('user_name');
+        echo "<script>alert('注销成功！')</script>";
+        $this->load->view('account/register');          
     }
 }

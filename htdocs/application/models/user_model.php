@@ -25,6 +25,14 @@ class User_model extends CI_Model
         return $result;
     }
 
+    public function logout()
+    {
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('user_name');
+        $this->session->unset_userdata('user_fullname');
+        $this->session->unset_userdata('lastActiveTime');
+    }
+    
     public function active($data){
         $this->db->where('id', $data['id']);
         $this->db->update('user',$data);
