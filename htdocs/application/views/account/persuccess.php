@@ -23,10 +23,10 @@
 	<div class="wrap clearfix">
 		<div class="logo-box">
 			<h1 class="logo"> 
-				<a href="<?= site_url('bigdata/index')?>"><img src="<?= site_url('images/logo.png')?>"></a> 
+				<a href="<?= site_url('home/index')?>"><img src="<?= site_url('images/logo.png')?>"></a> 
 			</h1>
 			<h2 class="logo-left">
-	            <a href='<?= site_url('account/register')?>'><img src="<?= site_url('images/logo-regist.png')?>"></a>
+	            <a href="<?= site_url('account/register')?>"><img src="<?= site_url('images/logo-regist.png')?>"></a>
 	        </h2>	
 		</div>	
 		<div class="head_login fr">
@@ -35,7 +35,7 @@
 	            <img class="header_img" src="<?= site_url('images/head-photo.png')?>" width="32" height="32"/>	
             </span>		
             <p class="fl ueser_cnt">
-            	<a href="<?= site_url('account/personal')?>"><?= $user['email']?></a><span>|</span><a href="<?= site_url('account/log_out')?>">注销</a>
+            	<a href="login.html"><?= $user['email']?></a><span>|</span><a href="<?= site_url('account/log_out')?>">退出</a>
             </p>
         </div>
 	</div>
@@ -44,18 +44,18 @@
 <div class="reg-success">
 	<div class="wrap clearfix">
 		<div class="reg-success-title">
-			<h3>您已成功注册!</h3>
+			<h3><?= $user['user_fullname']?>，您已完善个人资料成功!</h3>
 		</div>
 		<div class="info-complete">
 			<div class="go-complete">
-				<a href="<?= site_url('account/enter')?>" class="complete-pic">
-				<div class="complete-head">如果您想报名参加大赛</div>
+				<a href="<?= site_url('project/index')?>" class="complete-pic">
+				<div class="complete-head">赶紧去创建自己的项目吧！</div>
 				<div class="complete-img"><img src="<?= site_url('images/reg-success1.png')?>" class="pic"></div>
-				<div class="complete-foot"><p>完善个人资料</p></div></a>
+				<div class="complete-foot"><p>创建团队项目</p></div></a>
 			</div>
 		</div>
 		<div class="reg-success-foot">
-			暂不报名,<a href="<?= site_url('home/index')?>">回到主页</a>
+			暂不创建项目,<a href="<?= site_url('home/index')?>">回到主页</a>
 		</div>
 	</div>
 </div>

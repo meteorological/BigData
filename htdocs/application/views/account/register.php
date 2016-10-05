@@ -23,7 +23,7 @@
 	<div class="wrap clearfix">
 		<div class="logo-box">
 			<h1 class="logo"> 
-				<a href="<?= site_url('bigdata/index')?>"><img src="<?= site_url('images/logo.png')?>"></a> 
+				<a href="<?= site_url('home/index')?>"><img src="<?= site_url('images/logo.png')?>"></a> 
 			</h1>
 			<h2 class="logo-left">
 	            <a href='<?= site_url('account/register')?>'><img src="<?= site_url('images/logo-regist.png')?>"></a>
@@ -45,7 +45,7 @@
                                 邮箱
                             </div>
                             <div class="form1-info">
-                                <input type="text" value="" placeholder="用于登陆的账号" class="nor-inp" value="" id="username" name="email" onchange="if_email_exists()" required />
+                                <input type="text" value="" placeholder="用于登陆的账号" class="nor-inp" value="" id="username" name="email" onChange="if_email_exists()" required />
                             </div>
                             <div class="form1-info-check" id="username_tips"></div>
                         </li>
@@ -54,7 +54,7 @@
                                 密码
                             </div>
                             <div class="form1-info">
-                                <input type="password" value="" placeholder="密码" class="nor-inp focus" id="password" name="password" required/>
+                                <input type="password" value="" placeholder="密码" class="nor-inp focus" id="password" name="password" required onChange="if_password_standard()" />
                             </div>
                             <div class="form1-info-check"  id="password_tips"></div>
                         </li>      
@@ -63,7 +63,7 @@
                                 验证码
                             </div>
                             <div class="form1-info">
-                                <input type="text" placeholder="验证码" style="width:157px;float:left;" class="nor-inp" class="code" id="code" name="code" required="required"/>
+                                <input type="text" placeholder="验证码" style="width:157px;float:left;" class="nor-inp" class="code" id="code" name="code" required onChange="if_code_standard()" />
                                 <img src="<?= site_url('account/create_code/')?>"  id="code_img" class="yzm-img"  style="cursor:pointer;height:38px;margin-top:1px;margin-left:5px;" onclick="create_code()"/>
                             </div>
                             <div id="code_error" class="form1-info-check"></div>
@@ -87,7 +87,6 @@
                     </form>
                     <script type="text/javascript">
                         function create_code(){
-                            alert(1);
                             document.getElementById('code_img').src="<?php echo site_url('account/create_code/'); ?>?"+Math.random();
                         }
                         function if_email_exists(){
@@ -96,13 +95,44 @@
                                 type : "post",
                                 async : false,
                                 dataType : "json", //收受数据格式
-                                data:{'email':$("#email").val()},
+                                data:{'email':$("#username").val()},
                                 url : "<?= site_url("account/if_email_exists/") ?>",
                                 cache : false,
                                 success : function(data) {
-                                    alert(data);
+                                    /*如果data不为0.则提示邮箱已注册*/
+                                    /*如果data为0.则显示邮箱可用*/
                                 }
                             });
+                        }
+                        function if_password_standard(){
+                                                      $
+                            .ajax({
+                                type : "post",
+                                async : false,
+                                dataType : "json", //收受数据格式
+                                data:{'password':$("#password").val()},
+                                url : "<?= site_url("account/password_standard/") ?>",
+                                cache : false,
+                                success : function(data) {
+                                    /*如果data不为0.则提示错误信息*/
+                                    /*如果data为0.则显示密码可用*/
+                                }
+                            });  
+                        }
+                        function if_code_standard(){
+                            $
+                            .ajax({
+                                type : "post",
+                                async : false,
+                                dataType : "json", //收受数据格式
+                                data:{'code':$("#code").val()},
+                                url : "<?= site_url("account/code_standard/") ?>",
+                                cache : false,
+                                success : function(data) {
+                                    /*如果data不为0.则提示错误信息*/
+                                    /*如果data为0.则显示验证码可用*/
+                                }
+                            }); 
                         }
                     </script>
                 </div>

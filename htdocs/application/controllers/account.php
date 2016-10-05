@@ -2,42 +2,90 @@
 
 class Account extends CI_Controller
 {
-
+    /**
+     *构造函数
+     */
 	public function __construct()
     {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('bigdata_model','bigdata');
-        $this->load->model('user_model','user');
+        $this->load->model('account_model','account');
         $this->load->library('session');
     }
 
-    public function index(){
-        //$data['type']='login';
-        $this->load->view('account/regsuccess');
-    }
+	/**
+	 *“注册页面”跳转函数
+	 */
+	public function register(){
+		$this->load->view('account/register');
+	}
+
+	/**
+	 *“登陆页面”页面跳转函数
+	 */
+	public function login(){
+		$this->load->view('account/login');
+	}
+
+	/**
+	 *激活页面跳转函数
+	 */
+	public function verify(){
+		/*START*/
+		/*激活账号是否存在：*/
+			/*是：*/
+				/*是否已激活：*/
+					/*是：*/
+						/*显示已激活信息，跳转主页*/
+					/*否：*/
+						/*是否已过激活有效期*/
+							/*是：*/
+								/*显示激活有效期已过信息*/
+							/*否：*/
+								/*激活，更新登陆信息，跳转激活页面*/
+			/*否：*/
+				/*显示激活账号不存在信息*/
+		/*END*/
+
+		$verify = stripslashes(trim($_GET['verify']));
+		$nowtime = time();
+		$query =$this->account->select_by_token($verify)->result_array();
+		if(count($query)!=0){
+			if($query[0]['status']=="1"){
+				echo "<script>alert('您已激活过您的账号，请直接登陆。')</script>";
+				$this->load->view('home/index');
+			}
+			else if($nowtime>$query[0]['token_exptime']){
+				show_error('您的激活有效期已过，请重新注册。');
+			}else{
+				$query[0]['status']=1;
+				$this->account->active($query[0]);		
+				$data['user']=$query[0];
+				$this->session->set_userdata('user_id',$query[0]['id']);
+        		$this->session->set_userdata('user_name',$query[0]['username']);
+        		$current = time();
+        		$this->session->set_userdata('lastActiveTime', $current);
+				$this->load->view('account/regsuccess',$data);
+			}
+		}else{
+			show_error('出现了一点问题:)请稍后重试');	
+		}		
+	}
 
     /**
-	 *前台注册按钮触发事件
+	 *注册函数
 	 */
 	public function signup(){
 		//获取经过处理过的注册信息
 		$userdata=$this->info_standard($_POST);
 		//数据库插入注册信息
-		$this->user->insert($userdata);
+		$this->account->insert($userdata);
 		//向注册邮箱发送激活邮件
 		$this->mail_send($userdata);
 		//跳转到注册页面
-		$this->load->view('account/register');
-	}
-
-	public function register(){
-		$this->load->view('account/register');
-	}
-
-	public function login(){
-		//跳转到注册页面
-		$this->load->view('account/login');
+		echo "<script>alert('注册成功，请前往邮箱激活！')</script>";
+		$this->load->view('home/index');
 	}
 
 	/**
@@ -48,7 +96,7 @@ class Account extends CI_Controller
 		/*$userdata['username'] = stripslashes(trim($userdata['username']));*/
 		$userdata['email'] = trim($userdata['email']);		
 		//检测注册email是否存在	
-		$query = $this->user->select_by_email($userdata['email']);
+		$query = $this->account->select_by_email($userdata['email']);
 		if(count($query->result_array())!=0){
 			show_error("邮箱已存在，请直接登陆");
 		}
@@ -81,7 +129,7 @@ class Account extends CI_Controller
 		$userdata['token_exptime'] = time()+60*60*24;
 		return $userdata;
 	}
-
+	
 	/**
 	 *发送激活邮件，发送成功返回1，发送失败显示错误信息
 	 *@param $userdata
@@ -119,36 +167,41 @@ class Account extends CI_Controller
 	}
 
 	/**
-	 *验证激活，成功激活显示激活信息并跳转到登录页面，激活失败显示错误信息
+	 *判断密码是否符合既定标准
 	 */
-	public function verify(){
-		$verify = stripslashes(trim($_GET['verify']));
-		$nowtime = time();
-		$query =$this->user->select_by_token($verify)->result_array();
-		if(count($query)!=0){
-			if($nowtime>$query[0]['token_exptime']){
-				show_error('您的激活有效期已过，请重新注册。');
-			}else{
-				$query[0]['status']=1;
-				$this->user->active($query[0]);
-				$msg = '已激活账号!';			
-			}
-		}else{
-			show_error('未知错误');	
+	public function password_standard(){
+		$error_message=0;
+		if(strlen($_POST['password'])<6){
+			$error_message="密码长度不能小于6位";
 		}
-		$data['name']=$query[0]['name'];
-		$this->session->set_userdata('user_id',$query[0]['id']);
-        $this->session->set_userdata('user_name', $query[0]['name']);
-		echo "<script>alert('$msg');</script>";
-		$this->load->view('account/regsuccess',$data);
+		if(strlen($_POST['password'])>18){
+			$error_message="密码长度不能大于18位";
+		}
+		if(!preg_match("/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/",$_POST['password'])){
+			$error_message="密码需要由字母和数组组成";
+		}
+		echo json_encode($error_message);
 	}
+	
+
+	/**
+	 *判断验证码时候正确
+	 */
+	public function code_standard(){
+		$error_message=0;
+		if($_POST['code']!=$this->session->userdata('verification')){
+			$error_message="验证码不正确";
+		}
+		echo json_encode($error_message);
+	}
+
 
 	/**
 	 *判断注册账户是否存在，由前台ajax调用
 	 */
 	public function if_email_exists(){
 		$email = trim($_POST['email']);
-		$query=$this->user->select_by_email($email)->result_array();
+		$query=$this->account->select_by_email($email)->result_array();
 		echo count($query);
 	}
 
@@ -197,34 +250,48 @@ class Account extends CI_Controller
     }
 
     /**
-	 *前台登陆按钮触发事件
+	 *登陆函数
 	 */
     public function log_in(){
     	if($_POST['code']!=$this->session->userdata('verification')){
 			show_error("验证码不正确");
 		}
     	//检测email是否存在	
-		$query = $this->user->select_by_email($_POST['username'])->result_array();
+		$query = $this->account->select_by_email($_POST['username'])->result_array();
 		if(count($query)==0){
 			show_error("邮箱不存在");
 		}
 		if($query[0]['status']==0){
 			show_error("账号还未激活，请先前往邮箱激活");
 		}
-		if($query[0]['password']!=md5(trim($_POST['login-password']))){
+		if($query[0]['password']!=md5(trim($_POST['password']))){
 			show_error("密码不正确");
 		}
-        $data['bigdata']=$this->bigdata->get_query(-1,-1,1);
-		$data['name']=$query[0]['username'];
-        $this->session->set_userdata('user_id',$data['id']);
-        $this->session->set_userdata('user_name', $data['name']);
-        $this->load->view('bigdata/data', $data);
+		$data['user']=$query[0];
+        $this->session->set_userdata('user_id',$query[0]['id']);
+        $this->session->set_userdata('user_name',$query[0]['username']);
+        $current = time();
+        $this->session->set_userdata('lastActiveTime', $current);
+        $this->load->view('home/index', $data);
     }
 
+    /**
+	 *注销函数
+	 */
     public function log_out(){
     	$this->session->unset_userdata('user_id');
-        $this->session->unset_userdata('user_name');
         echo "<script>alert('注销成功！')</script>";
-        $this->load->view('account/register');          
+        $this->load->view('home/index');          
+    }
+
+    /**
+     *完善个人信息函数
+     */
+    public function improve_personal_info(){
+    	$user_id=$this->account->loginAuthorize();
+    	$_POST['id']=$user_id;
+    	$this->account->update($_POST);
+    	$data['user']=$this->user->select_by_id($user_id)->result_array()[0];
+    	$this->load->view('account/persuccess',$data);
     }
 }
