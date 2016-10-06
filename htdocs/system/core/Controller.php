@@ -82,7 +82,12 @@ class CI_Controller {
 		$directory = $this->router->directory;
 		$class = $this->router->class;
 		$method = $this->router->method;
-	
+
+		$this->load->model('account_model','user');
+		$hasFeature = $this->user->hasFeature($directory, $class, $method);
+		if ($hasFeature == FALSE) {
+			show_error('您没有权限。');
+		}
 		log_message('info', 'Controller Class Initialized');
 	}
 

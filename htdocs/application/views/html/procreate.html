@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>上海市高校“气象+大数据”应用创新大赛</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="stylesheet" type="text/css" href="style/reset.css">
+<link rel="stylesheet" type="text/css" href="style/main.css">
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+</head>
+<body>
+<!--头部-->
+<div class="header">
+  <div class="wrap clearfix">
+  	<div class="head_logo fl">
+  	    <a href="index.html" class="logo"><img src="images/logo.png"></a>
+  	</div>
+    <div class="fr">
+        <div class="head_side fl">
+            <ul class="main_nav clearfix">
+                <li class="fl"><a href="#">MDA大赛</a>
+                </li>
+                <li class="fl">
+                    <a href="#">大赛规则</a>
+                </li>
+                <li class="fl"><a href="#">比赛数据</a></li>
+                <li class="fl"><a href="#">报名通道</a>
+                </li>
+            </ul>
+        </div>
+        <div class="head_login fr">
+            <span class="ueser_box fl">
+                <i class="photo"></i>
+	            <img class="header_img" src="images/head-photo.png" width="32" height="32"/>	
+            </span>		
+            <p class="fl ueser_cnt">
+            	<a href="login.html">登录</a><span>|</span><a href="register.html">注册</a>
+            </p>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- 网页内容 -->
+<div class="content">
+    <div class="user-cnt-top">
+        <div class="wrap clearfix">
+            <div class="user-cnt-head">
+                <img src="http://img.cy.ncss.cn/common/99778/20160603/3ae8ed84219b4ca3ad382b16805f4b51.JPG" data-bd-imgshare-binded="1" id="userimg">
+            </div>
+            <div class="user-cnt-dtl">
+                <div class="u-name">
+                    <h3>谢斌</h3>
+                </div>
+                <div class="u-school">
+                    <span>华东师范大学</span>
+                    <em>|</em>
+                    <span>软件工程</span>
+                    <em>|</em>
+                    <span>本科</span><em>|</em>
+                    <span>2014级
+                    </span>
+                </div>
+                <div class="u-info">
+                    <ul>
+                        <li>
+                            <span class="icon-u-phone">13917829004</span>
+                        </li>
+                        <li>
+                            <span class="icon-u-mail">10142510237@ecnu.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="user-cnt-r">
+                <div class="user-edit">
+                    <a href="#" class="btn-white-sml">+编辑资料</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user-wp-box">
+        <div class="wrap clearfix">
+            <div class="user-wp-main">
+                <div class="user-wp-title clearfix">
+                    <h4 class="fl">我的比赛项目</h4>
+                </div>
+                <div class="user-wp-info">
+                    <form id="project_form">
+                        <p class="title">请认真填写参赛项目信息，以便评委对您的参赛项目进行有效性审查！</p>
+                        <br>
+                        <table class="my-project-form">
+                            <tbody>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>项目名称:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="pro_name" placeholder="项目名称简洁明确" class="nor-inp"> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>团队名称:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="team_name" placeholder="项目名称简洁明确" class="nor-inp"> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>作品摘要:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea class="pro-brief" name="pro-brief" maxlength="200" style="width:600px;"></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过200字</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>问题需求:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea class="pro-require" name="pro-require" maxlength="200" style="width:600px;"></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过200字</div> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>数据使用:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea class="pro-data" name="pro-data" maxlength="200" style="width:600px;"></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过200字</div> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>解决方案:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea class="pro-solution" name="pro-solution" maxlength="200" style="width:600px;"></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过200字</div> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>社会价值:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea class="pro-value" name="pro-value" maxlength="200" style="width:600px;"></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过200字</div> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>项目计划书:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="pg-wrp">
+                                            <div class="clearfix">
+                                                <div class="upload-btn fl" id="pro-btn">
+                                                    <input type="file" name="pro-document" class="upload-file">
+                                                    <a href="javascript:" class="btn-white-sml">点击上传</a>
+                                                </div>
+                                                <div class="upload-tip fl">
+                                                    请选择word格式的文件，大小不超过20MB，文件数量1个。
+                                                </div>
+                                            </div>
+                                            <div class="file-list fl">
+                                                <ul class="plan" style="display:list-item;">
+                                                    <li>
+                                                        <div class="file-pic">
+                                                            <img src="images/file-word.jpg">
+                                                        </div>
+                                                        <div class="file-name">
+                                                            江心传承
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <div class="label">
+                                            <em>*</em>演示PPT:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="pg-wrp">
+                                            <div class="clearfix">
+                                                <div class="upload-btn fl" id="pro-btn">
+                                                    <input type="file" name="pro-document" class="upload-file">
+                                                    <a href="javascript:" class="btn-white-sml">点击上传</a>
+                                                </div>
+                                                <div class="upload-tip fl">
+                                                    请选择ppt格式的文件，大小不超过20MB，文件数量1个。
+                                                </div>
+                                            </div>
+                                            <div class="file-list fl">
+                                                <ul class="plan" style="display:list-item;">
+                                                    <li>
+                                                        <div class="file-pic">
+                                                            <img src="images/file-ppt.jpg">
+                                                        </div>
+                                                        <div class="file-name">
+                                                            江心传承
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <div class="form-submit" style="margin-right:403px;">
+                                              <a href="#" class="btn-blue-sml mr15">保存并继续添加项目团队信息</a>
+                                        </div>
+                                    </td> 
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 网页尾部 -->
+<div class="footer">
+    <div class="wrap clearfix">
+        <div class="foot-info">
+            <div class="foot-copyright">
+                <p>主管部门：华东师范大学</p>
+                <p>联系方式：12345678901</p>
+            </div>
+        </div>
+        <div class="foot-right">
+            <ul>
+                <li>
+                    <div class="a">
+                        <img src="#">
+                    </div>
+                    <div class="b">大赛官方微信号</div>
+                </li>
+                <li>
+                    <div class="a">
+                        <img src="#">
+                    </div>
+                    <div class="b">大赛官方微信号</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
