@@ -35,7 +35,7 @@
 	            <img class="header_img" src="<?= site_url('images/head-photo.png')?>" width="32" height="32"/>	
             </span>		
             <p class="fl ueser_cnt">
-            	<a href="login.html"><?= $user['email']?></a><span>|</span><a href="<?= site_url('account/log_out')?>">退出</a>
+            	<a href="<?= site_url('account/personal')?>"><?= $user['email']?></a><span>|</span><a href="<?= site_url('account/log_out')?>">退出</a>
             </p>
         </div>
 	</div>

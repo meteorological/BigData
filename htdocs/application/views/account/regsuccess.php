@@ -23,7 +23,7 @@
 	<div class="wrap clearfix">
 		<div class="logo-box">
 			<h1 class="logo"> 
-				<a href="<?= site_url('bigdata/index')?>"><img src="<?= site_url('images/logo.png')?>"></a> 
+				<a href="<?= site_url('home/index')?>"><img src="<?= site_url('images/logo.png')?>"></a> 
 			</h1>
 			<h2 class="logo-left">
 	            <a href='<?= site_url('account/register')?>'><img src="<?= site_url('images/logo-regist.png')?>"></a>

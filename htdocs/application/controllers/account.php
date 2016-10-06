@@ -11,6 +11,9 @@ class Account extends CI_Controller
         $this->load->helper('url');
         $this->load->model('bigdata_model','bigdata');
         $this->load->model('account_model','account');
+        $this->load->model('project_model','project');
+        $this->load->model('school_model','school');
+        $this->load->model('education_model','education');
         $this->load->library('session');
     }
 
@@ -26,6 +29,30 @@ class Account extends CI_Controller
 	 */
 	public function login(){
 		$this->load->view('account/login');
+	}
+	
+	/**
+	 *“个人中心”页面跳转函数
+	 */
+	public function personal(){
+		$user_id=$this->account->loginAuthorize();
+        if($user_id!=FALSE){
+        	$user=$this->account->select_by_id($user_id)->result_array()[0];
+        	if($user['id_number']!="")
+        	{
+            	$data['user']=$this->account->get_user_detail_by_id($user_id)->result_array()[0];
+            	$data['project']=$this->project->get_project_by_user_id($user_id)->result_array();
+            	$this->load->view('account/percenter',$data);
+            }else{
+            	$data['user']=$user;
+            	$data['school']=$this->school->get_all_schools();
+            	$data['education']=$this->education->get_all_educations();
+                $this->load->view('account/perinfo',$data);   
+            }   
+        }else{
+        	echo "<script>alert('请先登录！')</script>";
+            $this->load->view('account/login');   
+        }  
 	}
 
 	/**
@@ -174,10 +201,10 @@ class Account extends CI_Controller
 		if(strlen($_POST['password'])<6){
 			$error_message="密码长度不能小于6位";
 		}
-		if(strlen($_POST['password'])>18){
+		else if(strlen($_POST['password'])>18){
 			$error_message="密码长度不能大于18位";
 		}
-		if(!preg_match("/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/",$_POST['password'])){
+		else if(!preg_match("/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/",$_POST['password'])){
 			$error_message="密码需要由字母和数组组成";
 		}
 		echo json_encode($error_message);
@@ -209,6 +236,7 @@ class Account extends CI_Controller
 	 *生成验证码图片，返回验证码图片结果
 	 */
 	public function create_code(){
+        ob_clean(); 
         function random($len) {
             $srcstr = "1a2s3d4f5g6hj8k9qwertyupzxcvbnm";
             mt_srand();

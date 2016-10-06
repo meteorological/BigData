@@ -13,13 +13,12 @@ class Data extends CI_Controller
 
     public function index()
     {
-/*        if($this->session->userdata('user')){
+        if($this->session->userdata('user')){
             $data['name']=$this->session->userdata('user');
         }
         $data['title'] = '气象大数据开放共享平台';
         $data['bigdata']=$this->bigdata->get_query(-1,-1,1);
-        $this->load->view('bigdata/data', $data);*/
-        $this->load->view('bigdata/index');
+        $this->load->view('data/data',$data);
         
     }
 

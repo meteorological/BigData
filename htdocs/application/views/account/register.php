@@ -38,35 +38,36 @@
     	<div class="wrap clearfix">
             <div class="regist-box-l">
                 <div class="info-form">
-                	<form id="form1" action="" name="form1" method="post">
+                	<form id="form1" action="" name="form1" method="post" onsubmit="return check()">
                     <ul>
                         <li class="clearfix">
                             <div class="form1-title">
                                 邮箱
                             </div>
                             <div class="form1-info">
-                                <input type="text" value="" placeholder="用于登陆的账号" class="nor-inp" value="" id="username" name="email" onChange="if_email_exists()" required />
+                                <input type="text" value="" placeholder="用于登陆的账号" class="nor-inp" value="" id="username" name="email" onChange="if_email_exists()"/>              
                             </div>
-                            <div class="form1-info-check" id="username_tips"></div>
+                            <div class="form1-info-check" id="username_tips" style="color: #aaaaaa"><p>请输入常用邮箱</p></div>
                         </li>
                         <li class="clearfix">
                             <div class="form1-title">
                                 密码
                             </div>
                             <div class="form1-info">
-                                <input type="password" value="" placeholder="密码" class="nor-inp focus" id="password" name="password" required onChange="if_password_standard()" />
+                                <input type="password" value="" placeholder="密码" class="nor-inp focus" id="password" name="password" onChange="if_password_standard()" />
+                                
                             </div>
-                            <div class="form1-info-check"  id="password_tips"></div>
+                            <div class="form1-info-check"  id="password_tips" style="color: #aaaaaa"><p>6-18位，字母数字组成</p></div>
                         </li>      
                        <li class="captcha-tag clearfix">
                             <div class="form1-title">
                                 验证码
                             </div>
                             <div class="form1-info">
-                                <input type="text" placeholder="验证码" style="width:157px;float:left;" class="nor-inp" class="code" id="code" name="code" required onChange="if_code_standard()" />
-                                <img src="<?= site_url('account/create_code/')?>"  id="code_img" class="yzm-img"  style="cursor:pointer;height:38px;margin-top:1px;margin-left:5px;" onclick="create_code()"/>
+                                <input type="text" placeholder="验证码" style="width:157px;float:left;" class="nor-inp" class="code" id="code" name="code" onChange="if_code_standard()" />
+                                <img src="<?= site_url('account/create_code/')?>"  id="code_img" class="yzm-img"  style="cursor:pointer;height:38px;margin-top:1px;margin-left:5px;" onclick="create_code()"/><a style="cursor:pointer;margin-left: 10px" onclick="create_code()">换一张</a>
                             </div>
-                            <div id="code_error" class="form1-info-check"></div>
+                            <div id="code_error" class="form1-info-check" style="color:#aaaaaa ">请填写正确的验证码</div>
                         </li>    
                         <li class="protocol-tag clearfix">
                             <div class="form1-title">
@@ -74,65 +75,196 @@
                             </div>
                             <div class="form1-info">
                                 <span class="my-checkbox">
-                                    <input type="checkbox" id="mycheckbox" required="required" name="checkbox">
+                                    <input type="checkbox" id="mycheckbox" name="checkbox" onchange="if_checkbox_standard()">
                                     <label id="agree"><em>阅读并接受</em></label><a href="#" target="_blank">《上海市高校“气象+大数据”应用创新大赛用户协议》</a>
                                 </span>
                             </div>
-                            <div class="form1-info-check" id="protocol" style="display:none">请阅读并勾选协议</div>
+                            <div class="form1-info-check" id="protocol" style="color:#aaaaaa ">请阅读并勾选协议</div>
                         </li>
                          <div class="regist-submit">
-                        <input type="submit" class="btn-blue-big" id="register" value="注册" onClick="javascript:form1.action='<?= site_url("account/signup/")?>';javascript:form1.target='_self';" style="cursor: pointer;"/>
+                        <input type="submit" class="btn-blue-big" id="register" value="注册" onClick="javascript:form1.action='<?= site_url("account/signup/")?>';javascript:form1.target='_self';" onmousedown="reset_style()" style="cursor: pointer;"/>
                         </div>
                     </ul>       
                     </form>
                     <script type="text/javascript">
+                        var is_info_correct=true;
                         function create_code(){
                             document.getElementById('code_img').src="<?php echo site_url('account/create_code/'); ?>?"+Math.random();
                         }
                         function if_email_exists(){
-                            $
-                            .ajax({
-                                type : "post",
-                                async : false,
-                                dataType : "json", //收受数据格式
-                                data:{'email':$("#username").val()},
-                                url : "<?= site_url("account/if_email_exists/") ?>",
-                                cache : false,
-                                success : function(data) {
-                                    /*如果data不为0.则提示邮箱已注册*/
-                                    /*如果data为0.则显示邮箱可用*/
-                                }
-                            });
+                            var email=$("#username").val();
+                            var addHtml="√ 可以使用";
+                            var color="#22e42b";
+                            var is_correct=true;
+                            if(email==""){
+                                addHtml="邮箱不能为空";
+                                color="red";
+                                $("#username_tips").empty().append(addHtml);
+                                document.getElementById('username_tips').style.color = color;
+                                is_correct=false;
+                                return is_correct; 
+                            }
+                            else if(email.match("^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$")==null){
+                                addHtml="邮箱格式不正确";
+                                color="red";
+                                $("#username_tips").empty().append(addHtml);
+                                document.getElementById('username_tips').style.color = color;
+                                is_correct=false;
+                                return is_correct;
+                            }else{
+                                $
+                                .ajax({
+                                    type : "post",
+                                    async : false,
+                                    dataType : "json", //收受数据格式
+                                    data:{'email':$("#username").val()},
+                                    url : "<?= site_url("account/if_email_exists/") ?>",
+                                    cache : false,
+                                    success : function(data) {
+                                        if(data!=0){
+                                            addHtml="邮箱已注册";
+                                            color="red";
+                                            is_correct=false;
+                                        }
+                                        document.getElementById('username_tips').style.color = color;
+                                        $("#username_tips").empty().append(addHtml);
+                                        //return is_correct;
+                                        /*如果data不为0.则提示邮箱已注册*/
+                                        /*如果data为0.则显示邮箱可用*/
+                                    }
+                                });
+                                return is_correct;
+                            }
                         }
+
                         function if_password_standard(){
-                                                      $
-                            .ajax({
-                                type : "post",
-                                async : false,
-                                dataType : "json", //收受数据格式
-                                data:{'password':$("#password").val()},
-                                url : "<?= site_url("account/password_standard/") ?>",
-                                cache : false,
-                                success : function(data) {
-                                    /*如果data不为0.则提示错误信息*/
-                                    /*如果data为0.则显示密码可用*/
-                                }
-                            });  
+                            var code=$("#code").val();
+                            var addHtml="√ 正确";
+                            var color="#22e42b";
+                            var is_correct=true;
+                            if(code==""){
+                                addHtml="验证码不能为空";
+                                color="red";
+                                $("#code_error").empty().append(addHtml);
+                                document.getElementById('code_error').style.color = color;
+                                is_correct=false;
+                                return is_correct;
+                            }else{
+                                $
+                                .ajax({
+                                    type : "post",
+                                    async : false,
+                                    dataType : "json", //收受数据格式
+                                    data:{'code':code},
+                                    url : "<?= site_url("account/code_standard/") ?>",
+                                    cache : false,
+                                    success : function(data) {
+                                        if(data!=0){
+                                            addHtml=data;
+                                            color="red";
+                                            is_correct=false;
+                                        }
+                                        document.getElementById('code_error').style.color = color;
+                                        $("#code_error").empty().append(addHtml);
+                                        /*如果data不为0.则提示邮箱已注册*/
+                                        /*如果data为0.则显示邮箱可用*/
+                                    }
+                                });
+                                return is_correct;
+                            }
                         }
+
                         function if_code_standard(){
-                            $
-                            .ajax({
-                                type : "post",
-                                async : false,
-                                dataType : "json", //收受数据格式
-                                data:{'code':$("#code").val()},
-                                url : "<?= site_url("account/code_standard/") ?>",
-                                cache : false,
-                                success : function(data) {
-                                    /*如果data不为0.则提示错误信息*/
-                                    /*如果data为0.则显示验证码可用*/
-                                }
-                            }); 
+                            var code=$("#code").val();
+                            var addHtml="√ 正确";
+                            var color="#22e42b";
+                            var is_correct=true;
+                            if(code==""){
+                                addHtml="验证码不能为空";
+                                color="red";
+                                $("#code_error").empty().append(addHtml);
+                                document.getElementById('code_error').style.color = color;
+                                is_correct=false;
+                            }else{
+                                $
+                                .ajax({
+                                    type : "post",
+                                    async : false,
+                                    dataType : "json", //收受数据格式
+                                    data:{'code':code},
+                                    url : "<?= site_url("account/code_standard/") ?>",
+                                    cache : false,
+                                    success : function(data) {
+                                        if(data!=0){
+                                            addHtml=data;
+                                            color="red";
+                                            is_correct=false;
+                                        }
+                                        document.getElementById('code_error').style.color = color;
+                                        $("#code_error").empty().append(addHtml);
+                                        /*如果data不为0.则提示邮箱已注册*/
+                                        /*如果data为0.则显示邮箱可用*/
+                                    }
+                                });
+                                return is_correct;
+                            }
+                        }
+
+                        function if_checkbox_standard(){
+                            var addHtml="√";
+                            var is_correct=true;
+                            var color="#22e42b";
+                            if(document.getElementById('mycheckbox').checked==false)
+                            {
+                                addHtml="请阅读并勾选协议";
+                                is_correct=false;
+                                color="red";
+                            }
+                            document.getElementById('protocol').style.color = color;
+                            $("#protocol").empty().append(addHtml);
+                            return is_correct;
+                        }
+
+                        function check(){
+                            document.getElementById('username').style.border = "";
+                            document.getElementById('password').style.border = "";
+                            document.getElementById('code').style.border = "";
+                            document.getElementById('agree').style.color = "";
+                            /*var is_correct=true;
+                            if(!if_email_exists()){
+                                is_correct=false;
+                            }
+                            if(!if_password_standard()){
+                                is_correct=false;
+                            }
+                            if(!if_code_standard()){
+                                is_correct=false;
+                            }
+                            if(!if_checkbox_standard())
+                            {
+                                is_correct=false;
+                            }*/
+                            return is_info_correct;
+                        }
+
+                        function reset_style(){
+                            is_info_correct=true;
+                            if(!if_email_exists()){
+                                document.getElementById('username').style.border = "2px solid red";
+                                is_info_correct=false;
+                            }
+                            if(!if_password_standard()){
+                                document.getElementById('password').style.border = "2px solid red";
+                                is_info_correct=false;
+                            }
+                            if(!if_code_standard()){
+                                document.getElementById('code').style.border = "2px solid red";
+                                is_info_correct=false;
+                            }
+                            if(!if_checkbox_standard()){
+                                document.getElementById('agree').style.color = "red";
+                                is_info_correct=false;
+                            }
                         }
                     </script>
                 </div>
