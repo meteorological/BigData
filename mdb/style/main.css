@@ -212,3 +212,20 @@
 .rule-con-img {width:460px;float:left;padding:0 15px;}
 .rule-con-content {border-radius:5px;background-color:#ededed;line-height:1.8;padding:18px 40px 5px;margin-top:15px;}
 .rule-con-content p {font-size:16px;margin:0 0 10px;}
+/* 数据下载 */
+.data-con-top {text-align:center;margin:80px 0;}
+.data-con-top h1 {font-size:48px;margin-bottom:30px;letter-spacing:10px;}
+.data-box {width:70%;margin-left:15%;margin-right:15%;margin-bottom:80px;}
+.data-box-top {padding:0 20px;}
+.data-box-top a {margin-top:15px;}
+.data-box-top h3{font-size:18px;margin-bottom:10px;margin-top:20px;line-height:1.1;border-bottom:2px solid #ededed;padding-bottom:10px;display:inline-block;}
+.data-box-table {padding:0 20px;margin-top:20px;text-align:left;margin-bottom:50px;}
+.data-box-table table {width:100%;text-align:center;color:#666;}
+.data-box-table table tr {height:40px;border-bottom:1px solid #ededed;}
+.data-box-table table tr td {font-size:14px;}
+.data-box-table table th {font-size:14px;padding-bottom:5px;color:#000;}
+.data-box-table table .odd {background:#f8faff;}
+.data-box-page {text-align:center;padding:0 20px;}
+.data-box-page a {border:1px solid #000;padding:8px;margin:0 3px;font-size:14px;}
+.data-box-page span {margin-left:10px;font-size:14px;}
+.data-box-page input {width:40px;line-height:30px;text-align:center;border:1px solid #dadada;margin:0 3px;font-size:14px;}
