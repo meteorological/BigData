@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<!-- <meta charset="utf-8"> -->
 <title>上海市高校“气象+大数据”应用创新大赛</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="renderer" content="webkit">
@@ -23,7 +23,7 @@
 	<div class="wrap clearfix">
 		<div class="logo-box">
 			<h1 class="logo"> 
-				<a href="<?= site_url('home/index')?>"><img src="<?= site_url('images/logo.png')?>"></a> 
+				<a href="<?= site_url('home/index')?>"><img src="<?= site_url('images/logo.png')?>"/></a> 
 			</h1>	
 		</div>	
 	</div>
@@ -54,13 +54,12 @@
                                 <li>
                                     <div class="form-inp form-captcha">
                                         <input type="text" name="code" placeholder="验证码" class="inp" id="code" required onchange="if_code_standard()">
-                                        <img src="<?= site_url('account/create_code/')?>" id="code_img" class="captcha-img" onclick="create_code()" style="cursor: pointer;">
+                                        <img src="<?= site_url('account/create_code/')?>" id="code_img" class="captcha-img" onclick="create_code()" style="cursor: pointer;"/>
                                         <div id="code_error"></div>
                                     </div>
                                 </li>
                             </ul>                
                         <div class="form-list-submit">
-<!-- <input type="submit" value="登陆" class="btn-red-big" id="login" > -->
                             <input type="submit" class="btn-red-big" id="login" value="登录" onClick="javascript:form1.action='<?= site_url("account/log_in/")?>';javascript:form1.target='_self';" style="cursor: pointer;" onmousedown="reset_style()"/>
                         </div>                 
                    </form>
@@ -111,45 +110,16 @@
                             }
                         }
                         function check(){
-                            /*document.getElementById('username').style.border = "";
-                            document.getElementById('password').style.border = "";*/
                             document.getElementById('code').style.border = "";
-                            /*document.getElementById('agree').style.color = "";*/
-                            /*var is_correct=true;
-                            if(!if_email_exists()){
-                                is_correct=false;
-                            }
-                            if(!if_password_standard()){
-                                is_correct=false;
-                            }
-                            if(!if_code_standard()){
-                                is_correct=false;
-                            }
-                            if(!if_checkbox_standard())
-                            {
-                                is_correct=false;
-                            }*/
                             return is_info_correct;
                         }
 
                         function reset_style(){
                             is_info_correct=true;
-/*                            if(!if_email_exists()){
-                                document.getElementById('username').style.border = "2px solid red";
-                                is_info_correct=false;
-                            }
-                            if(!if_password_standard()){
-                                document.getElementById('password').style.border = "2px solid red";
-                                is_info_correct=false;
-                            }*/
                             if(!if_code_standard()){
                                 document.getElementById('code').style.border = "1px solid red";
                                 is_info_correct=false;
                             }
-/*                            if(!if_checkbox_standard()){
-                                document.getElementById('agree').style.color = "red";
-                                is_info_correct=false;
-                            }*/
                         }
                     </script>
                 </div>
@@ -172,13 +142,13 @@
             <ul>
                 <li>
                     <div class="a">
-                        <img src="#">
+                        <img src="#"/>
                     </div>
                     <div class="b">大赛官方微信号</div>
                 </li>
                 <li>
                     <div class="a">
-                        <img src="#">
+                        <img src="#"/>
                     </div>
                     <div class="b">大赛官方微信号</div>
                 </li>

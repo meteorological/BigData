@@ -66,6 +66,12 @@ class Account_model extends CI_Model
         if ($feature_name == "index") {
             return TRUE;
         }
+        if ($feature_name == "get_query") {
+            return TRUE;
+        }
+        if ($feature_name == "download") {
+            return TRUE;
+        }
         if ($feature_controller_name == "account") {
             return TRUE;
         }

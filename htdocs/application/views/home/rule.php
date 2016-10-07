@@ -24,7 +24,7 @@
                 <li class="fl">
                     <a href="<?= site_url('home/rule')?>">大赛规则</a>
                 </li>
-                <li class="fl"><a href="#">比赛数据</a></li>
+                <li class="fl"><a href="<?= site_url('data/index')?>">比赛数据</a></li>
                 <li class="fl"><a href="<?= site_url('project/index')?>">报名通道</a>
                 </li>
             </ul>

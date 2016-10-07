@@ -9,7 +9,7 @@ class Account extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('bigdata_model','bigdata');
+        $this->load->model('data_model','data');
         $this->load->model('account_model','account');
         $this->load->model('project_model','project');
         $this->load->model('school_model','school');

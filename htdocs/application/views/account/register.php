@@ -67,7 +67,7 @@
                                 <input type="text" placeholder="验证码" style="width:157px;float:left;" class="nor-inp" class="code" id="code" name="code" onChange="if_code_standard()" />
                                 <img src="<?= site_url('account/create_code/')?>"  id="code_img" class="yzm-img"  style="cursor:pointer;height:38px;margin-top:1px;margin-left:5px;" onclick="create_code()"/><a style="cursor:pointer;margin-left: 10px" onclick="create_code()">换一张</a>
                             </div>
-                            <div id="code_error" class="form1-info-check" style="color:#aaaaaa ">请填写正确的验证码</div>
+                            <div id="code_error" class="form1-info-check" style="color:#aaaaaa "></div>
                         </li>    
                         <li class="protocol-tag clearfix">
                             <div class="form1-title">
@@ -79,7 +79,7 @@
                                     <label id="agree"><em>阅读并接受</em></label><a href="#" target="_blank">《上海市高校“气象+大数据”应用创新大赛用户协议》</a>
                                 </span>
                             </div>
-                            <div class="form1-info-check" id="protocol" style="color:#aaaaaa ">请阅读并勾选协议</div>
+                            <div class="form1-info-check" id="protocol" style="color:#aaaaaa "></div>
                         </li>
                          <div class="regist-submit">
                         <input type="submit" class="btn-blue-big" id="register" value="注册" onClick="javascript:form1.action='<?= site_url("account/signup/")?>';javascript:form1.target='_self';" onmousedown="reset_style()" style="cursor: pointer;"/>
@@ -138,40 +138,31 @@
                         }
 
                         function if_password_standard(){
-                            var code=$("#code").val();
+                            var password=$("#password").val();
                             var addHtml="√ 正确";
                             var color="#22e42b";
                             var is_correct=true;
-                            if(code==""){
-                                addHtml="验证码不能为空";
+                            if(password==""){
+                                addHtml="密码不能为空";
                                 color="red";
-                                $("#code_error").empty().append(addHtml);
-                                document.getElementById('code_error').style.color = color;
+                               
                                 is_correct=false;
-                                return is_correct;
-                            }else{
-                                $
-                                .ajax({
-                                    type : "post",
-                                    async : false,
-                                    dataType : "json", //收受数据格式
-                                    data:{'code':code},
-                                    url : "<?= site_url("account/code_standard/") ?>",
-                                    cache : false,
-                                    success : function(data) {
-                                        if(data!=0){
-                                            addHtml=data;
-                                            color="red";
-                                            is_correct=false;
-                                        }
-                                        document.getElementById('code_error').style.color = color;
-                                        $("#code_error").empty().append(addHtml);
-                                        /*如果data不为0.则提示邮箱已注册*/
-                                        /*如果data为0.则显示邮箱可用*/
-                                    }
-                                });
-                                return is_correct;
+                            }else if(password.length<6){
+                                addHtml="密码长度不能小于6位";
+                                color="red";
+                                is_correct=false;
+                            }else if(password.length>18){
+                                addHtml="密码长度不能大于18位";
+                                color="red";
+                                is_correct=false;
+                            }else if(password.match("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$")==null){
+                                addHtml="密码需要由字母和数组组成";
+                                color="red";
+                                is_correct=false;
                             }
+                            $("#password_tips").empty().append(addHtml);
+                            document.getElementById('password_tips').style.color = color;
+                            return is_correct;
                         }
 
                         function if_code_standard(){
