@@ -47,16 +47,28 @@
 .side-tool-bar li.tool-top-link .tool-bar-show a span {display:none;}
 /*页面内容*/
 .content-main {background-color:#fff;padding-bottom:70px;}
-.content-box {padding-bottom:25px;margin-bottom:23px;border-bottom:2px solid #d3d3d3;}
+.content-box {padding-bottom:25px;margin-bottom:23px;border-bottom:2px solid #d3d3d3;background:#ededed;}
 .content-box-title {margin-bottom:15px;}
 .content-box-title h2 {float:left;font-size:25px;color:#333;padding-top:25px;padding-left:18px;font-weight:bold;line-height:39px;}
 .content-box-content {padding:0 50px;}
+.content-box-content p {font-size:14px;}
 .schedule-box {margin-top:20px;margin-bottom:70px;min-height:280px;width:49%;}
 .number-1 {background-image: url(../images/number.png);background-position:0 0;width:60px;height:200px;display:inline-block;}
+.number-2 {background-image: url(../images/number.png);background-position:-62px 0;width:60px;height:200px;display:inline-block;}
+.number-3 {background-image: url(../images/number.png);background-position:-124px 0;width:60px;height:200px;display:inline-block;}
+.number-4 {background-image: url(../images/number.png);background-position:-186px 0;width:60px;height:200px;display:inline-block;}
+.number-5 {background-image: url(../images/number.png);background-position:122px 0;width:60px;height:200px;display:inline-block;}
+.number-6 {background-image: url(../images/number.png);background-position:60px 0;width:60px;height:200px;display:inline-block;}
 .block-content {margin-top:20px;margin-left:20px;width:332px;display:inline-block;vertical-align:top;}
 .block-top {display:block;}
-.block-icon1 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;vertical-align:middle;}
+.block-icon1 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
+.block-icon2 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
+.block-icon3 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
+.block-icon4 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
+.block-icon5 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
+.block-icon6 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
 .block-head {margin-left:20px;display:inline-block;}
+.block-head h3 {font-size:20px;}
 .block-text {width:312px;margin-top:17px;border-top:1px solid #000;font-size:16px;line-height:32px;padding-top:6px;text-align:justify;}
 .medal-box {padding-top:30px;display:block;}
 .img-box {float:left;position:relative;margin:0 40px;width:15%;height:162px;display:block;}
