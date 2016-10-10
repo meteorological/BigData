@@ -61,7 +61,7 @@
         <div class="data-box">
             <div class="data-box-top">
                 <h3>数据由上海气象局提供</h3>
-                <a href="<?=site_url('data/download')?>" class="btn-blue-sml fr">数据下载</a>
+                <a href="<?=site_url('data/download')?>" class="btn-blue-sml fr" target="_blank">数据下载</a>
             </div>
             <div class="data-box-table">
                 <table>

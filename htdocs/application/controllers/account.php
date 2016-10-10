@@ -50,8 +50,9 @@ class Account extends CI_Controller
                 $this->load->view('account/perinfo',$data);   
             }   
         }else{
-        	echo "<script>alert('请先登录！')</script>";
-            $this->load->view('account/login');   
+            $this->load->view('account/login'); 
+            $data['message']="请先登录";
+            $this->load->view('errors/blank',$data);   
         }  
 	}
 
@@ -319,7 +320,7 @@ class Account extends CI_Controller
     	$user_id=$this->account->loginAuthorize();
     	$_POST['id']=$user_id;
     	$this->account->update($_POST);
-    	$data['user']=$this->user->select_by_id($user_id)->result_array()[0];
+    	$data['user']=$this->account->select_by_id($user_id)->result_array()[0];
     	$this->load->view('account/persuccess',$data);
     }
 }

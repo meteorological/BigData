@@ -48,8 +48,9 @@ class Project extends CI_Controller
                 } 	 
             }
         }else{
-            echo "<script>alert('您还没有登陆，请先登录！')</script>";
-            $this->load->view('account/login');   
+            $this->load->view('account/login');
+            $data['message']="请先登录";
+            $this->load->view('errors/blank',$data);   
         }              
     }
 
