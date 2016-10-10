@@ -193,18 +193,16 @@
 .program-box {margin-bottom:30px;margin-top:20px;}
 .program-box-title {height:48px;padding:0 10px;background:#fbfbfb;border:1px solid #efefef;}
 .program-box-title h4{font-size:18px;font-weight:bold;line-height:48px;color:#333;}
-.program-box-list li{padding:16px 0;border-bottom:1px dashed #e6e6e6;overflow:hidden;}
-.program-box-list li .a {float:left;display:block;font-size:14px;color:#666;font-weight:bold;padding-left:8px;width:98px;}
-.program-box-list li .b {margin-left:106px;font-size:12px;display:block;color:#666;}
-.program-box-intro {font-size:12px;line-height:24px;color:#666;padding:15px 10px;}
+.program-box-intro {font-size:14px;line-height:24px;color:#666;padding:15px 10px;}
 .program-file-box {margin-top:20px;position:relative;overflow:hidden;}
 .program-file-box li {border:1px solid #efefef;margin-right:16px;width:146px;height:192px;background:#fafafa;border-radius:4px;overflow:hidden;text-align:center;float:left;margin-bottom:30px;}
 .program-file-box img {display:block;margin:15px auto;width:90px;height:90px;}
 .program-file-box span {width:146px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;color:#999;font-size:14px;margin-bottom:10px;}
 .s-bluebtn {display:inline-block;background:#5a85ef;padding:0 15px;height:30px;line-height:30px;border-radius:2px;font-size:12px;color:#fff;}
 .team-r {float:right;width:500px;}
-.team-box {border:1px solid #efefef;background:#f8faff;border-radius:3px;border-bottom:30px;overflow:hidden;margin-bottom:20px;}
+.team-box {border:1px solid #efefef;background:#f8faff;border-radius:3px;border-bottom:30px;overflow:hidden;margin-bottom:40px;}
 .team-box h4 {height:50px;background:#efefef;line-height:50px;font-size:16px;color:#333;font-weight:bold;padding:0 12px;border-radius:3px 3px 0 0;}
+.team-box span {color:#666;padding-left:20px;}
 .team-box table {width:100%;}
 .team-box th {font-size:14px;color:#666;font-weight:bold;white-space:nowrap;}
 .team-box td {font-size:12px;color:#666;padding:15px 8px;text-align:left;border-bottom:1px dotted #e5e5e5;}
@@ -230,8 +228,20 @@
 .data-box {width:70%;margin-left:15%;margin-right:15%;margin-bottom:80px;}
 .data-box-top {padding:0 20px;}
 .data-box-top a {margin-top:15px;}
-.data-box-top h3{font-size:18px;margin-bottom:10px;margin-top:20px;line-height:1.1;border-bottom:2px solid #ededed;padding-bottom:10px;display:inline-block;}
-.data-box-table {padding:0 20px;margin-top:20px;text-align:left;margin-bottom:50px;}
+.data-box-top h3{font-size:20px;margin-bottom:10px;margin-top:20px;line-height:1.1;border-bottom:2px solid #ededed;padding-bottom:10px;display:inline-block;}
+.data-box-middle {padding:0 20px;margin-top:20px;}
+.data-box-middle-left {display:inline-block;float:left;width:13.2%;margin-top:11px;}
+.label-box {background-color:#00aeee;font-size:18px;color:#fff;padding:15px 25px;}
+.data-box-middle-middle {display:inline-block;float:left;width:40.8%;}
+.data-box-middle-middle h5 {font-size:14px;padding-bottom:5px;}
+.data-box-middle-middle p {font-size:16px;}
+.data-box-middle-right {display:inline-block;float:left;width:45.8%}
+.data-box-middle-right h5 {font-size:14px;padding-bottom:5px;}
+.data-box-middle-right p {font-size:16px;}
+.data-box-bottom {margin:0 20px;margin-top:20px;margin-bottom:20px;border-bottom:1px dotted #000;padding-bottom:30px;}
+.data-box-bottom h5 {font-size:14px;padding-bottom:5px;color:#00aeee;}
+.data-box-bottom p {font-size:16px;}
+.data-box-table {padding:0 20px;margin-top:40px;text-align:left;margin-bottom:50px;}
 .data-box-table table {width:100%;text-align:center;color:#666;}
 .data-box-table table tr {height:40px;border-bottom:1px solid #ededed;}
 .data-box-table table tr td {font-size:14px;}
@@ -241,3 +251,21 @@
 .data-box-page a {border:1px solid #000;padding:8px;margin:0 3px;font-size:14px;}
 .data-box-page span {margin-left:10px;font-size:14px;}
 .data-box-page input {width:40px;line-height:30px;text-align:center;border:1px solid #dadada;margin:0 3px;font-size:14px;}
+.data-con-foot {width:70%;margin-left:15%;margin-right:15%;margin-bottom:40px;}
+.data-con-foot-link {padding:0 20px;font-size:18px;padding-bottom:10px;}
+.data-con-foot-linkpic {padding:0 20px;text-align:center;padding-top:20px;}
+.linkpic {padding-bottom:30px;}
+.linkpic span {padding:0 30px;}
+.data-box-bottom-null {border-bottom:1px dotted #000;padding:0 20px 20px 20px;margin:0 20px;}
+/* 数据修改 */
+.program-box-intro textarea {border:1px solid #dadada;padding:10px;font-size:14px;line-height:2em;height:150px;margin-top:10px;color:#666;}
+.team-box .nor-inp {width:45px;height:15px;line-height:18px;border:1px solid #dadada;font-size:14px;padding:10px;}
+#modal-overlay {visibility: hidden;position: absolute;left: 0px;top: 0px;width:100%;height:100%;text-align:center;z-index: 1000;background-color: #000; opacity:0.9;}
+.modal-data{width:500px;margin: 100px auto;background-color: #fff;border:1px solid #000;padding:15px;text-align:center;}
+.add-member {float:right;}
+.form2-title {float:left;width:75px;text-align:right;line-height:40px;font-size:15px;color:#666;font-weight:bold;}
+.modal-data #form2 ul li {padding-bottom:20px;}
+#modal-overlay-teacher {visibility: hidden;position: absolute;left: 0px;top: 0px;width:100%;height:100%;text-align:center;z-index: 1000;background-color: #000; opacity:0.9;}
+.modal-data-teacher{width:500px;margin: 100px auto;background-color: #fff;border:1px solid #000;padding:15px;text-align:center;}
+.form3-title {float:left;width:75px;text-align:right;line-height:40px;font-size:15px;color:#666;font-weight:bold;}
+.modal-data-teacher #form3 ul li {padding-bottom:20px;}
