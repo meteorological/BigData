@@ -17,6 +17,7 @@
 .header_img{border-radius:100%;}
 .ueser_cnt a.u-name-msg {position:relative;padding-right:35px;}
 .ueser_cnt a .msg-tag {height:15px;line-height:15px;color:#fff;font-size:12px;padding:0 5px;border-radius:8px;background:#f00;display:inline-block;position:absolute;right:-10px;top:-8px;}
+#register{border: 0;}
 </style>
 <!--头部-->
 <div class="header">
@@ -38,7 +39,7 @@
     	<div class="wrap clearfix">
             <div class="regist-box-l">
                 <div class="info-form">
-                	<form id="form1" action="" name="form1" method="post" onsubmit="return check()">
+                	<form id="form1" action="" name="form1" method="post" onsubmit="return check()" onkeydown="if(event.keyCode==13){return false;}">
                     <ul>
                         <li class="clearfix">
                             <div class="form1-title">
@@ -86,8 +87,8 @@
                         </div>
                     </ul>       
                     </form>
-                    <script type="text/javascript">
-                        var is_info_correct=true;
+                    <script type="text/javascript"> 
+                        var is_info_correct=false;
                         function create_code(){
                             document.getElementById('code_img').src="<?php echo site_url('account/create_code/'); ?>?"+Math.random();
                         }
@@ -241,15 +242,15 @@
                         function reset_style(){
                             is_info_correct=true;
                             if(!if_email_exists()){
-                                document.getElementById('username').style.border = "2px solid red";
+                                document.getElementById('username').style.border = "1px solid red";
                                 is_info_correct=false;
                             }
                             if(!if_password_standard()){
-                                document.getElementById('password').style.border = "2px solid red";
+                                document.getElementById('password').style.border = "1px solid red";
                                 is_info_correct=false;
                             }
                             if(!if_code_standard()){
-                                document.getElementById('code').style.border = "2px solid red";
+                                document.getElementById('code').style.border = "1px solid red";
                                 is_info_correct=false;
                             }
                             if(!if_checkbox_standard()){
@@ -275,34 +276,3 @@
     <!--reg-box End-->
     <!--end 内容区-->
 </div>
-
-<!--底部-->
-<div class="footer">
-    <div class="wrap clearfix">
-        <div class="foot-info">
-            <div class="foot-copyright">
-                <p>主管部门：华东师范大学</p>
-                <p>联系方式：12345678901</p>
-            </div>
-        </div>
-        <div class="foot-right">
-            <ul>
-                <li>
-                    <div class="a">
-                        <img src="#">
-                    </div>
-                    <div class="b">大赛官方微信号</div>
-                </li>
-                <li>
-                    <div class="a">
-                        <img src="#">
-                    </div>
-                    <div class="b">大赛官方微信号</div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--end 底部-->
-</body>
-</html>

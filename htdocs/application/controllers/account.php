@@ -14,6 +14,7 @@ class Account extends CI_Controller
         $this->load->model('project_model','project');
         $this->load->model('school_model','school');
         $this->load->model('education_model','education');
+        $this->load->model('member_model','member');
         $this->load->library('session');
     }
 
@@ -22,6 +23,7 @@ class Account extends CI_Controller
 	 */
 	public function register(){
 		$this->load->view('account/register');
+		$this->load->view('templates/footer');
 	}
 
 	/**
@@ -42,7 +44,13 @@ class Account extends CI_Controller
         	{
             	$data['user']=$this->account->get_user_detail_by_id($user_id)->result_array()[0];
             	$data['project']=$this->project->get_project_by_user_id($user_id)->result_array();
+            	if(count($data['project'])!=0){
+            		$data['project']=$data['project'][0];
+            		$data['member']=$this->member->get_all_members($data['project']['project_id'])->result_array();
+            		$data['teacher']=$this->member->get_all_teachers($data['project']['project_id'])->result_array();
+            	}
             	$this->load->view('account/percenter',$data);
+            	$this->load->view('templates/footer');
             }else{
             	$data['user']=$user;
             	$data['school']=$this->school->get_all_schools();
@@ -82,7 +90,9 @@ class Account extends CI_Controller
 		if(count($query)!=0){
 			if($query[0]['status']=="1"){
 				echo "<script>alert('您已激活过您的账号，请直接登陆。')</script>";
+				$this->load->view('templates/header');
 				$this->load->view('home/index');
+				$this->load->view('templates/footer');
 			}
 			else if($nowtime>$query[0]['token_exptime']){
 				show_error('您的激活有效期已过，请重新注册。');
@@ -113,7 +123,9 @@ class Account extends CI_Controller
 		$this->mail_send($userdata);
 		//跳转到注册页面
 		echo "<script>alert('注册成功，请前往邮箱激活！')</script>";
+		$this->load->view('templates/header');
 		$this->load->view('home/index');
+		$this->load->view('templates/footer');
 	}
 
 	/**
@@ -185,7 +197,7 @@ class Account extends CI_Controller
     	//激活邮件主题
     	$emailsubject = "‘气象+大数据应用’创新创业大赛账号激活";
     	//激活邮件正文
-    	$emailbody = "亲爱的用户"/*.$userdata['username'].*/."：<br/>感谢您注册‘气象+大数据应用’创新创业大赛官方网站帐号。<br/>请点击下列链接激活您的帐号。<br/><a href='http://172.20.10.3:8090/account/verify/?verify=".$userdata['token']."' target='_blank'>http://localhost:8088/account/verify/?verify=".$userdata['token']."</a><br/>如果以上链接无法点击，请将它复制到你的浏览器地址栏中进入访问，该链接24小时内有效。<br/>如果此次激活请求非你本人所发，请忽略本邮件。<br/><p style='text-align:right'></p><p>‘气象+大数据应用’创新创业大赛组委会</p>";
+    	$emailbody = "亲爱的用户"/*.$userdata['username'].*/."：<br/>感谢您注册‘气象+大数据应用’创新创业大赛官方网站帐号。<br/>请点击下列链接激活您的帐号。<br/><a href='http://localhost:8088/account/verify/?verify=".$userdata['token']."' target='_blank'>http://localhost:8088/account/verify/?verify=".$userdata['token']."</a><br/>如果以上链接无法点击，请将它复制到你的浏览器地址栏中进入访问，该链接24小时内有效。<br/>如果此次激活请求非你本人所发，请忽略本邮件。<br/><p style='text-align:right'></p><p>‘气象+大数据应用’创新创业大赛组委会</p>";
     	$rs = $smtp->sendmail($smtpemailto, $smtpemailfrom, $emailsubject, $emailbody, $emailtype);
 		if($rs==1){
 			return 1;	
@@ -301,7 +313,9 @@ class Account extends CI_Controller
         $this->session->set_userdata('user_name',$query[0]['username']);
         $current = time();
         $this->session->set_userdata('lastActiveTime', $current);
+		$this->load->view('templates/header',$data);
         $this->load->view('home/index', $data);
+		$this->load->view('templates/footer');
     }
 
     /**
@@ -310,7 +324,9 @@ class Account extends CI_Controller
     public function log_out(){
     	$this->session->unset_userdata('user_id');
         echo "<script>alert('注销成功！')</script>";
+		$this->load->view('templates/header');
         $this->load->view('home/index');          
+		$this->load->view('templates/footer');
     }
 
     /**

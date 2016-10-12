@@ -17,13 +17,17 @@ class Data extends CI_Controller
     public function index()
     {
         $data['data']=$this->data->get_query(-1,-1,1);
-        $data['page_num']=$this->data->get_page_num();
+        $data['page_num']=100;
         $user_id=$this->account->loginAuthorize();
         if($user_id!=FALSE){
             $data['user']=$this->account->select_by_id($user_id)->result_array()[0];
+            $this->load->view('templates/header');   
             $this->load->view('data/index',$data);   
+            $this->load->view('templates/footer');   
         }else{
+            $this->load->view('templates/header');   
             $this->load->view('data/index',$data);   
+            $this->load->view('templates/footer');   
         }     
     }
 
@@ -60,12 +64,7 @@ class Data extends CI_Controller
         }
     }
 
-    public function preview_pdf(){
-        $path = dirname(APPPATH).'/documents/bigdata/bigdata.pdf'; 
-        header('Content-type: application/pdf'); 
-        header('filename='.$path); 
-        readfile($path); 
-    }
+
     public function get_query(){
         $result=$this->data->get_query($_POST['time'],$_POST['station'],$_POST['page']);
 /*        for($i=0;$i<count($result);$i++){

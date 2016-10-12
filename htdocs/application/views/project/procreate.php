@@ -12,12 +12,11 @@
 <script src="<?= site_url('js/jquery.SuperSlide.2.1.1.js')?>"></script>
 </head>
 <body>
-<!--头部-->
 <div class="header">
   <div class="wrap clearfix">
-  	<div class="head_logo fl">
-  	    <a href="<?= site_url('home/index')?>" class="logo"><img src="<?= site_url('images/logo.png')?>"></a>
-  	</div>
+      <div class="head_logo fl">
+          <a href="<?= site_url('home/index')?>" class="logo"><img src="<?= site_url('images/logo.png')?>"></a>
+      </div>
     <div class="fr">
         <div class="head_side fl">
             <ul class="main_nav clearfix">
@@ -34,10 +33,10 @@
         <div class="head_login fr">
             <span class="ueser_box fl">
                 <i class="photo"></i>
-	            <img class="header_img" src="<?= site_url('images/head-photo.png')?>" width="32" height="32"/>	
-            </span>		
+                <img class="header_img" src="<?= site_url('images/head-photo.png')?>" width="32" height="32"/>    
+            </span>        
             <p class="fl ueser_cnt">
-            	<a href="<?= site_url('account/personal')?>"><?=$user['email']?></a>
+                <a href="<?= site_url('account/personal')?>"><?=$user['email']?></a>
                 <span>|</span>
                 <a href="<?= site_url('account/log_out')?>">注销</a>
             </p>
@@ -74,11 +73,6 @@
                             <span class="icon-u-mail"><?= $user['email']?></span>
                         </li>
                     </ul>
-                </div>
-            </div>
-            <div class="user-cnt-r">
-                <div class="user-edit">
-                    <a href="#" class="btn-white-sml">+编辑资料</a>
                 </div>
             </div>
         </div>
@@ -122,8 +116,8 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <textarea class="pro-brief" name="project_brief" maxlength="200" style="width:600px;" required></textarea>
-                                        <div class="textarea-tip" style="width:620px;">不超过200字</div>
+                                        <textarea class="pro-brief" name="project_brief" maxlength="800" style="width:600px;" required></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过800字</div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -133,8 +127,8 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <textarea class="pro-require" name="project_require" maxlength="200" style="width:600px;" required></textarea>
-                                        <div class="textarea-tip" style="width:620px;">不超过200字</div> 
+                                        <textarea class="pro-require" name="project_require" maxlength="800" style="width:600px;" required></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过800字</div> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -144,8 +138,8 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <textarea class="pro-data" name="project_data" maxlength="200" style="width:600px;" required></textarea>
-                                        <div class="textarea-tip" style="width:620px;">不超过200字</div> 
+                                        <textarea class="pro-data" name="project_data" maxlength="800" style="width:600px;" required></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过800字</div> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -155,8 +149,8 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <textarea class="pro-solution" name="project_solution" maxlength="200" style="width:600px;" required></textarea>
-                                        <div class="textarea-tip" style="width:620px;">不超过200字</div> 
+                                        <textarea class="pro-solution" name="project_solution" maxlength="800" style="width:600px;" required></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过800字</div> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -166,58 +160,57 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <textarea class="pro-value" name="project_value" maxlength="200" style="width:600px;" required></textarea>
-                                        <div class="textarea-tip" style="width:620px;">不超过200字</div> 
+                                        <textarea class="pro-value" name="project_value" maxlength="800" style="width:600px;" required></textarea>
+                                        <div class="textarea-tip" style="width:620px;">不超过800字</div> 
                                     </td>
                                 </tr>
+                               <!--  <tr>
+                                   <td valign="top">
+                                       <div class="label">
+                                           <em>*</em>项目计划书:
+                                       </div>
+                                   </td>
+                                   <td>
+                                       <div class="pg-wrp">
+                                           <div class="clearfix">
+                                               <div class="upload-btn fl" id="pro-btn">
+                                                   <input type="file" name="project_word" class="upload-file" required id="project_word" onchange="get_word_name(this)" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document,.doc">
+                                                   <a href="javascript:" class="btn-white-sml">点击上传</a>
+                                               </div>
+                                               <div class="upload-tip fl" id="word_upload_div">
+                                                   请选择word格式的文件，大小不超过20MB，文件数量1个。
+                                               </div>
+                                           </div>
+                                           <div class="file-list fl">
+                                               <ul class="plan" style="display:list-item;">
+                                                   <li>
+                                                       <div class="file-pic">
+                                                           <img src="<?= site_url('images/file-word.jpg')?>">
+                                                       </div>
+                                                       <div class="file-name" id="word_name_div">
+                                                       </div>
+                                                   </li>
+                                               </ul>
+                                           </div>
+                                           <div id="word_error" style="color: red"></div>
+                                       </div>
+                                   </td>
+                               </tr> -->
                                 <tr>
                                     <td valign="top">
                                         <div class="label">
-                                            <em>*</em>项目计划书:
+                                            <em>*</em>演示文稿:
                                         </div>
                                     </td>
                                     <td>
                                         <div class="pg-wrp">
                                             <div class="clearfix">
                                                 <div class="upload-btn fl" id="pro-btn">
-                                                    <input type="file" name="project_word" class="upload-file" required id="project_word" onchange="get_word_name(this)" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document,.doc">
+                                                    <input type="file" name="project_pdf" class="upload-file" required id="project_pdf" onchange="get_pdf_name(this)" accept="application/pdf">
                                                     <a href="javascript:" class="btn-white-sml">点击上传</a>
                                                 </div>
-                                                <div class="upload-tip fl" id="word_upload_div">
-                                                    请选择word格式的文件，大小不超过20MB，文件数量1个。
-                                                </div>
-                                            </div>
-                                            <div class="file-list fl">
-                                                <ul class="plan" style="display:list-item;">
-                                                    <li>
-                                                        <div class="file-pic">
-                                                            <img src="<?= site_url('images/file-word.jpg')?>">
-                                                        </div>
-                                                        <div class="file-name" id="word_name_div">
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div id="word_error" style="color: red"></div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top">
-                                        <div class="label">
-                                            <em>*</em>演示PPT:
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="pg-wrp">
-                                            <div class="clearfix">
-                                                <div class="upload-btn fl" id="pro-btn">
-                                                    <input type="file" name="project_ppt" class="upload-file" required id="project_ppt" onchange="get_ppt_name(this)" accept="application/vnd.openxmlformats-officedocument.presentationml.presentation
-                                                    ,.ppt">
-                                                    <a href="javascript:" class="btn-white-sml">点击上传</a>
-                                                </div>
-                                                <div class="upload-tip fl" id="ppt_upload_div">
-                                                    请选择ppt格式的文件，大小不超过20MB，文件数量1个。
+                                                <div class="upload-tip fl" id="pdf_upload_div">
+                                                    请选择pdf格式的文件，大小不超过20MB，文件数量1个。
                                                 </div>
                                             </div>
                                             <div class="file-list fl">
@@ -226,12 +219,12 @@
                                                         <div class="file-pic">
                                                             <img src="<?= site_url('images/file-ppt.jpg')?>">
                                                         </div>
-                                                        <div class="file-name" id="ppt_name_div">
+                                                        <div class="file-name" id="pdf_name_div">
                                                         </div>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div id="ppt_error" style="color: red"></div>
+                                            <div id="pdf_error" style="color: red"></div>
                                         </div>
                                     </td>
                                 </tr>
@@ -240,7 +233,7 @@
                                     <td>
                                         <div class="form-submit" style="margin-right:403px;">
                                               <!-- <a href="#" class="btn-blue-sml mr15">保存并继续添加项目团队信息</a> -->
-                                              <input type="submit" class="btn-blue-sml mr15" id="login" value="保存并继续添加项目团队信息" onClick="javascript:form1.action='<?= site_url('project/enter_for')?>';javascript:form1.target='_self';" style="cursor: pointer;" onmousedown="reset_style()"/>
+                                              <input type="submit" class="btn-blue-sml mr15" id="login" value="保存并继续添加项目团队信息" onClick="javascript:form1.action='<?= site_url('project/enter_for')?>';javascript:form1.target='_self';" style="cursor: pointer;border: 0;"/>
                                         </div>
                                     </td> 
                                 </tr>
@@ -255,9 +248,9 @@
 
 <script type="text/javascript">
     var isIE = /msie/i.test(navigator.userAgent) && !window.opera;
-    var is_word_correct=true;
-    var is_ppt_correct=true;
-    function get_word_name(target){
+   /* var is_word_correct=true;*/
+    var is_pdf_correct=true;
+/*    function get_word_name(target){
         var file = $("#project_word").val();
         var strFileName=file.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi,"$1");  //正则表达式获取文件名，不带后缀
         var FileExt=file.replace(/.+\./,"");   //正则表达式获取后缀
@@ -286,17 +279,17 @@
             }
         }
         $("#word_error").empty().append(addHtml);
-    }
-    function get_ppt_name(target){
-        var file = $("#project_ppt").val();
+    }*/
+    function get_pdf_name(target){
+        var file = $("#project_pdf").val();
         var strFileName=file.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi,"$1");  //正则表达式获取文件名，不带后缀
         var FileExt=file.replace(/.+\./,"");   //正则表达式获取后缀
-        document.getElementById("ppt_name_div").innerHTML=strFileName+"."+FileExt;
+        document.getElementById("pdf_name_div").innerHTML=strFileName+"."+FileExt;
         var addHtml="";
-        is_ppt_correct=true;
-        if(FileExt!="ppt"&&FileExt!="pptx"){
+        is_pdf_correct=true;
+        if(FileExt!="pdf"){
             addHtml="文件类型错误";
-            is_ppt_correct=false;
+            is_pdf_correct=false;
         }else{
             var fileSize = 0;
             if (isIE && !target.files) {    // IE浏览器
@@ -311,52 +304,17 @@
             }
             var size = fileSize / 1024 / 1024;
             if (size > 20) {
-                is_ppt_correct=false;
+                is_pdf_correct=false;
                 addHtml="文件大小超过20M，请重新上传";
             }
         }
-        $("#ppt_error").empty().append(addHtml);
+        $("#pdf_error").empty().append(addHtml);
     }
     function check(){
-        document.getElementById("ppt_upload_div").style.color="";
-        document.getElementById("word_upload_div").style.color="";
-        return is_word_correct&&is_ppt_correct;
-    }
-    function reset_style(){
-        if(!is_word_correct){
-            document.getElementById("word_upload_div").style.color="red";
-        }
-        if(!is_ppt_correct){    
-            document.getElementById("ppt_upload_div").style.color="red";
-        }
+        document.getElementById("pdf_upload_div").style.color="red";
+        /*document.getElementById("word_upload_div").style.color="";*/
+        setTimeout("document.getElementById(\"pdf_upload_div\").style.color=\"\"",200);
+        return is_pdf_correct;
     }
 </script>
 <!-- 网页尾部 -->
-<div class="footer">
-    <div class="wrap clearfix">
-        <div class="foot-info">
-            <div class="foot-copyright">
-                <p>主管部门：华东师范大学</p>
-                <p>联系方式：12345678901</p>
-            </div>
-        </div>
-        <div class="foot-right">
-            <ul>
-                <li>
-                    <div class="a">
-                        <img src="#">
-                    </div>
-                    <div class="b">大赛官方微信号</div>
-                </li>
-                <li>
-                    <div class="a">
-                        <img src="#">
-                    </div>
-                    <div class="b">大赛官方微信号</div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-</body>
-</html>

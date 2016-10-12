@@ -22,7 +22,7 @@
     <div class="fr">
         <div class="head_side fl">
             <ul class="main_nav clearfix">
-                <li class="fl"><a href="<?= site_url('home/index')?>">MDA大赛</a>
+                <li class="fl"><a href="<?= site_url('home/index')?>">SMDA大赛</a>
                 </li>
                 <li class="fl">
                     <a href="<?= site_url('home/rule')?>">大赛规则</a>
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="form1-info">
                                     <div class="my-select university" style="width:350px;">
-                                    <select name="school" id="school">
+                                    <select name="school" id="school" style="width:100%;height: 40px">
                                     <?php for($i=0;$i<count($school);$i++):?>
                                         <option value="<?= $school[$i]['school_id'] ?>"><?= $school[$i]['school_name']?></option>
                                     <?php endfor;?>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="form1-info">
                                     <div class="my-select education" style="width:350px;">
-                                     <select name="educational_level" id="educational_level">
+                                     <select name="educational_level" id="educational_level" style="width:100%;height: 40px">
                                     <?php for($i=0;$i<count($education);$i++):?>
                                         <option value="<?= $education[$i]['education_id'] ?>"><?= $education[$i]['education_name']?></option>
                                     <?php endfor;?>
@@ -137,12 +137,14 @@
                                 <div class="form1-info-check"></div>
                             </li>
                         </ul>
-                        <input type="submit" onClick="javascript:form1.action='<?= site_url('account/improve_personal_info')?>';javascript:form1.target='_self';" class="btn-blue-big" style="cursor: pointer;" value="提交申请" onmousedown="reset_style()">
+                        <div class="reg-submit">
+                        <input type="submit" onClick="javascript:form1.action='<?= site_url('account/improve_personal_info')?>';javascript:form1.target='_self';" class="btn-blue-big" style="cursor: pointer;border: 0px;" value="提交申请" onmousedown="reset_style()">
+                        </div>
                     </form>
                     <div class="reg-submit">
                     
                         <!-- <a href="persuccess.html" class="btn-blue-big"><span>提交申请</span></a> -->
-                    </div>
+                    
                     <script type="text/javascript">
                     var is_info_correct=true;
                     function if_user_fullname_standard(){
@@ -197,7 +199,7 @@
                         var admission_year=$("#admission_year").val();
                         var reg=/^((20[0-1]{1}[0-9]{1}))$/;
                         if(!reg.test(admission_year)){
-                            addHtml="请输入正确的入学年份";
+                            addHtml="请输入正确的入学年份,如 2016";
                             color="red";
                             is_correct=false;
                         }

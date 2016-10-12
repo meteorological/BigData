@@ -14,6 +14,11 @@ class Project_model extends CI_Model
 		->where('user_id',$user_id)->get('project');
 		return $result;
 	}
+
+	public function update($data){
+		$this->db->where('project_id',$data['project_id']);
+		$this->db->update('project',$data);
+	}
 }
 
 ?>

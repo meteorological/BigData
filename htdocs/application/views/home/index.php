@@ -1,76 +1,20 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>上海市高校“气象+大数据”应用创新大赛</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<link rel="stylesheet" type="text/css" href="<?= site_url('css/reset.css')?>">
-<link rel="stylesheet" type="text/css" href="<?= site_url('css/main.css')?>">
-<script src="<?= site_url('js/jquery-1.11.3.min.js')?>" type="text/javascript" charset="utf-8"></script>
-<script src="<?= site_url('js/jquery.SuperSlide.2.1.1.js')?>"></script>
-</head>
-<body>
-<!--头部-->
-<div class="header head-fixed">
-  <div class="wrap clearfix">
-  	<div class="head_logo fl">
-  	    <a href="<?= site_url('home/index')?>" class="logo"><img src="<?= site_url('images/logo.png')?>"></a>
-  	</div>
-    <div class="fr">
-        <div class="head_side fl">
-            <ul class="main_nav clearfix">
-                <li class="fl"><a href="<?= site_url('home/index')?>">MDA大赛</a>
-                </li>
-                <li class="fl">
-                    <a href="<?= site_url('home/rule')?>">大赛规则</a>
-                </li>
-                <li class="fl"><a href="<?= site_url('data/index')?>">比赛数据</a></li>
-                <li class="fl"><a href="<?= site_url('project/index')?>">报名通道</a>
-                </li>
-            </ul>
-        </div>
-        <div class="head_login fr">
-            <span class="ueser_box fl">
-                <i class="photo"></i>
-	            <img class="header_img" src="<?= site_url('images/head-photo.png')?>" width="32" height="32"/>	
-            </span>		
-            <p class="fl ueser_cnt">
-            <?php if(!isset($user)): ?>
-            	<a href="<?= site_url('account/login')?>">登录</a>
-            	<span>|</span>
-            	<a href="<?= site_url('account/register')?>">注册</a>
-            <?php endif; ?>
-            <!-- 如果用户已经登陆，这边需要显示email，点击能够跳转到个人后台 -->
-            <?php if(isset($user)): ?>
-            	<a href="<?= site_url('account/personal')?>"><?=$user['email']?></a>
-            	<span>|</span>
-            	<a href="<?= site_url('account/log_out')?>">注销</a>
-           	<?php endif; ?>
-            </p>
-        </div>
-    </div>
-  </div>
-</div>
 <!-- 首页宣传图 -->
 <div class="content-top">
 	<div class="wrap">
 		<div class="host-unit">
 			<span>主办单位：</span>
 			<span class="mr30">
-			    <img src="#">
 			    <b>上海市教育委员会</b>
+			    <b>上海市气象局</b>
+			    <b>华东师范大学</b>
             </span>
             <em>|</em>
             <span>承办单位：</span>
             <span>
-            	<img src="#">
-            	<b>上海市气象局</b>
+            	<b>华东师范大学计算机科学与软件工程学院</b>
             </span>
             <span>
-            	<img src="#">
-            	<b>华东师范大学</b>
+            	
             </span>
 		</div>
 	</div>
@@ -99,7 +43,33 @@
                     	<div class="block-top">
                     		<div class="block-icon1"></div>
                     		<div class="block-head">
-                    			<h2>报名组队及创意提交</h2>
+                    			<h3>报名组队及创意提交</h3>
+                    			<p>2016年10月20日-11月09日24:00</p>
+                    		</div>
+                    	</div>
+                    	<p class="block-text">基于比赛网站和相关平台链接提供的数据样本进行初步创意，并按照要求提交初赛创意方案。</p>
+                    </div>
+				</div>
+				<div class="schedule-box fr">
+                    <div class="number-2"></div>
+                    <div class="block-content">
+                    	<div class="block-top">
+                    		<div class="block-icon2"></div>
+                    		<div class="block-head">
+                    			<h3>报初赛作品评审</h3>
+                    			<p class="desc trans done">2016年11月10日-11月13日</p>
+                    		</div>
+                    	</div>
+                    	<p class="block-text trans done">基于比赛网站和相关平台链接提供的数据样本进行初步创意，并按照要求提交初赛创意方案。</p>
+                    </div>
+				</div>
+				<div class="schedule-box fl">
+                    <div class="number-3"></div>
+                    <div class="block-content">
+                    	<div class="block-top">
+                    		<div class="block-icon3"></div>
+                    		<div class="block-head">
+                    			<h3>报名组队及创意提交</h3>
                     			<p>2016年10月10日-2016年10月30日</p>
                     		</div>
                     	</div>
@@ -107,10 +77,10 @@
                     </div>
 				</div>
 				<div class="schedule-box fr">
-                    <div class="number-1"></div>
+                    <div class="number-4"></div>
                     <div class="block-content">
                     	<div class="block-top">
-                    		<div class="block-icon1"></div>
+                    		<div class="block-icon4"></div>
                     		<div class="block-head">
                     			<h3>报名组队及创意提交</h3>
                     			<p class="desc trans done">2016年10月10日-2016年10月30日</p>
@@ -120,38 +90,12 @@
                     </div>
 				</div>
 				<div class="schedule-box fl">
-                    <div class="number-1"></div>
+                    <div class="number-5"></div>
                     <div class="block-content">
                     	<div class="block-top">
-                    		<div class="block-icon1"></div>
-                    		<div class="block-head">
-                    			<h2>报名组队及创意提交</h2>
-                    			<p>2016年10月10日-2016年10月30日</p>
-                    		</div>
-                    	</div>
-                    	<p class="block-text">基于比赛网站和相关平台链接提供的数据样本进行初步创意，并按照要求提交初赛创意方案。</p>
-                    </div>
-				</div>
-				<div class="schedule-box fr">
-                    <div class="number-1"></div>
-                    <div class="block-content">
-                    	<div class="block-top">
-                    		<div class="block-icon1"></div>
+                    		<div class="block-icon5"></div>
                     		<div class="block-head">
                     			<h3>报名组队及创意提交</h3>
-                    			<p class="desc trans done">2016年10月10日-2016年10月30日</p>
-                    		</div>
-                    	</div>
-                    	<p class="block-text trans done">基于比赛网站和相关平台链接提供的数据样本进行初步创意，并按照要求提交初赛创意方案。</p>
-                    </div>
-				</div>
-				<div class="schedule-box fl">
-                    <div class="number-1"></div>
-                    <div class="block-content">
-                    	<div class="block-top">
-                    		<div class="block-icon1"></div>
-                    		<div class="block-head">
-                    			<h2>报名组队及创意提交</h2>
                     			<p>2016年10月10日-2016年10月30日</p>
                     		</div>
                     	</div>
@@ -159,10 +103,10 @@
                     </div>
 				</div>
 				<div class="schedule-box fr">
-                    <div class="number-1"></div>
+                    <div class="number-6"></div>
                     <div class="block-content">
                     	<div class="block-top">
-                    		<div class="block-icon1"></div>
+                    		<div class="block-icon6"></div>
                     		<div class="block-head">
                     			<h3>报名组队及创意提交</h3>
                     			<p class="desc trans done">2016年10月10日-2016年10月30日</p>
@@ -180,50 +124,23 @@
 			<div class="content-box-content">
 			    <div class="medal-box clearfix">
 			    	<div class="img-box">
-			    		<img src="<?= site_url('images/jp.png')?>">
-			    		<span>1名</span>
+			    		<img src="../../../images/jp.png">
+			    		<span>1名|20000元</span>
 			    	</div>
 			    	<div class="img-box">
-			    		<img src="<?= site_url('images/yp.png')?>">
-			    		<span>3名</span>
+			    		<img src="../../../images/yp.png">
+			    		<span>3名|8000元</span>
 			    	</div>
 			    	<div class="img-box">
-			    		<img src="<?= site_url('images/tp.png')?>">
-			    		<span>8名</span>
+			    		<img src="../../../images/tp.png">
+			    		<span>6名|4000元</span>
 			    	</div>
 			    	<div class="img-box">
-			    		<img src="<?= site_url('images/zz.png')?>">
-			    		<span>15名</span>
+			    		<img src="../../../images/zz.png">
+			    		<span>10名</span>
 			    	</div>
 			    </div>
 			</div>
-		</div>
-	</div>
-</div>
-<!-- 网页尾部 -->
-<div class="footer">
-	<div class="wrap clearfix">
-		<div class="foot-info">
-			<div class="foot-copyright">
-				<p>主管部门：华东师范大学</p>
-				<p>联系方式：12345678901</p>
-			</div>
-		</div>
-		<div class="foot-right">
-		    <ul>
-				<li>
-				    <div class="a">
-					    <img src="#">
-					</div>
-					<div class="b">大赛官方微信号</div>
-				</li>
-				<li>
-				    <div class="a">
-						<img src="#">
-					</div>
-					<div class="b">大赛官方微信号</div>
-				</li>
-		    </ul>
 		</div>
 	</div>
 </div>

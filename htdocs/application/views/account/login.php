@@ -17,6 +17,7 @@
 .header_img{border-radius:100%;}
 .ueser_cnt a.u-name-msg {position:relative;padding-right:35px;}
 .ueser_cnt a .msg-tag {height:15px;line-height:15px;color:#fff;font-size:12px;padding:0 5px;border-radius:8px;background:#f00;display:inline-block;position:absolute;right:-10px;top:-8px;}
+#login{border: 0;width: 100%;}
 </style>
 <!--头部-->
 <div class="header">
@@ -60,7 +61,7 @@
                                 </li>
                             </ul>                
                         <div class="form-list-submit">
-                            <input type="submit" class="btn-red-big" id="login" value="登录" onClick="javascript:form1.action='<?= site_url("account/log_in/")?>';javascript:form1.target='_self';" style="cursor: pointer;" onmousedown="reset_style()"/>
+                            <input type="submit" class="btn-red-big" id="login" value="登录" onClick="javascript:form1.action='<?= site_url("account/log_in/")?>';javascript:form1.target='_self';" style="cursor: pointer;"/>
                         </div>                 
                    </form>
                    </div>
@@ -70,7 +71,6 @@
                         </a>
                     </div>
                     <script type="text/javascript">
-                        var is_info_correct=true;
                         function create_code(){
                             document.getElementById('code_img').src="<?php echo site_url('account/create_code/'); ?>?"+Math.random();
                         }
@@ -110,16 +110,13 @@
                             }
                         }
                         function check(){
-                            document.getElementById('code').style.border = "";
-                            return is_info_correct;
-                        }
-
-                        function reset_style(){
-                            is_info_correct=true;
+                            var is_info_correct=true;
                             if(!if_code_standard()){
                                 document.getElementById('code').style.border = "1px solid red";
                                 is_info_correct=false;
+                                setTimeout("document.getElementById('code').style.border = \"\"",200);
                             }
+                            return is_info_correct;
                         }
                     </script>
                 </div>
@@ -128,34 +125,3 @@
     </div>
     <!--end 内容区-->
 </div>
-
-<!--底部-->
-<div class="footer">
-    <div class="wrap clearfix">
-        <div class="foot-info">
-            <div class="foot-copyright">
-                <p>主管部门：华东师范大学</p>
-                <p>联系方式：12345678901</p>
-            </div>
-        </div>
-        <div class="foot-right">
-            <ul>
-                <li>
-                    <div class="a">
-                        <img src="#"/>
-                    </div>
-                    <div class="b">大赛官方微信号</div>
-                </li>
-                <li>
-                    <div class="a">
-                        <img src="#"/>
-                    </div>
-                    <div class="b">大赛官方微信号</div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--end 底部-->
-</body>
-</html>

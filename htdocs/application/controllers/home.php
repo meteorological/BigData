@@ -27,9 +27,13 @@ class Home extends CI_Controller
         $user_id=$this->user->loginAuthorize();
         if($user_id!=FALSE){
             $data['user']=$this->user->select_by_id($user_id)->result_array()[0];
+            $this->load->view('templates/header',$data);   
             $this->load->view('home/index',$data);   
+            $this->load->view('templates/footer');   
         }else{
+            $this->load->view('templates/header');   
             $this->load->view('home/index');   
+            $this->load->view('templates/footer');   
         }     
     }
 
@@ -47,9 +51,13 @@ class Home extends CI_Controller
         $user_id=$this->user->loginAuthorize();
         if($user_id!=FALSE){
             $data['user']=$this->user->select_by_id($user_id)->result_array()[0];
+            $this->load->view('templates/header',$data);   
             $this->load->view('home/rule',$data);   
+            $this->load->view('templates/footer');   
         }else{
+            $this->load->view('templates/header',$data);   
             $this->load->view('home/rule');   
+            $this->load->view('templates/footer');   
         }  
     }
 }
