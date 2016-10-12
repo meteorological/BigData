@@ -10,9 +10,13 @@
 <link rel="stylesheet" type="text/css" href="../../../css/main.css">
 <script src="../../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../../js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="../../../js/check.js"></script>
 </head>
 <body>
 <!--头部-->
+<style type="text/css">
+a{cursor: pointer;}
+</style>
 <div class="header">
   <div class="wrap clearfix">
   	<div class="head_logo fl">
@@ -86,7 +90,7 @@
                     <div class="program-title clearfix">
                         <h3 class="program-name">关于雾霾天数据的可视化研究</h3>
                     </div>
-                    <input type="hidden" name="project_id" value="<?=$project['project_id']?>">        
+                    <input type="hidden" id="project_id" name="project_id" value="<?=$project['project_id']?>">        
                     <div class="program-box">
                         <div class="program-box-title">
                             <h4>作品摘要</h4>
@@ -198,7 +202,7 @@
                                     <td width="30"><?= $member[$i]['education']?></td>
                                     <td width="30"><?= $member[$i]['admission_year']?></td>
                                     <td><?= $member[$i]['telephone']?></td> 
-                                    <td><a style="cursor: pointer;" onClick="delete_member(<?= $member[$i]['id']?>)">删除</a></td>
+                                    <td><a onClick="delete_member(<?= $member[$i]['id']?>)">删除</a></td>
                                 </tr> 
                             <?php endfor;?>
                             </table>
@@ -213,7 +217,7 @@
                                     <td width="85"><?= $teacher[$i]['school']?></td>
                                     <td><?= $teacher[$i]['major']?></td>
                                     <td><?= $teacher[$i]['telephone']?></td>
-                                    <td><a style="cursor: pointer;" href="#" onclick="overlayTeacher(<?= $teacher[$i]['id']?>)">修改</a></td>
+                                    <td><a href="#" onclick="overlayTeacher(<?= $teacher[$i]['id']?>)">修改</a></td>
                                 </tr>   
                             <?php endfor;?>
                             </table>
@@ -280,8 +284,8 @@
                 </li>   
             </ul>
         </form>
-        <a onclick="overlay(-2)" class="btn-blue-sml" style="cursor: pointer;">取消</a>
-        <a onclick="overlay(-1)" class="btn-blue-sml" style="cursor: pointer;">提交</a>
+        <a onclick="overlay(-2)" class="btn-blue-sml">取消</a>
+        <a onclick="overlay(-1)" class="btn-blue-sml">提交</a>
     </div>
 </div>
 <div id="modal-overlay-teacher"> 
@@ -330,8 +334,8 @@
                 </li>    
             </ul>
         </form>
-        <a onclick="overlayTeacher(-2)" style="cursor: pointer;" class="btn-blue-sml">取消</a>
-        <a onclick="overlayTeacher(<?= $teacher[0]['id']?>)" style="cursor: pointer;" class="btn-blue-sml">提交</a>
+        <a onclick="overlayTeacher(-2)" class="btn-blue-sml">取消</a>
+        <a onclick="overlayTeacher(<?= $teacher[0]['id']?>)" class="btn-blue-sml">提交</a>
     </div>
 </div>
 <script type="text/javascript">
@@ -369,7 +373,7 @@ function get_pdf_name(target){
     }
 var member_num=<?= count($member)?>;
 function delete_member(id){
-    if(member_num>1){
+    if(member_num>2){
     $
     .ajax({
     type : "post",
@@ -417,7 +421,7 @@ function delete_member(id){
                     'major':$("#major").val(),
                     'education':$("#education").val(),
                     'admission_year':$("#admission_year").val(),
-                    'telephone':$("#telephone").val()
+                    'telephone':$("#telephone").val(),
                     },
                     url : "<?= site_url("project/add_member/") ?>",
                     cache : false,

@@ -30,7 +30,7 @@ function if_id_number_standard(id_number){
  */
 function if_name_standard(name){
   var reg=/^[\u4e00-\u9fa5]{2,16}$/;
-  if(!reg.test(user_fullname)){
+  if(!reg.test(name)){
     return false;
   }
   return true;       
