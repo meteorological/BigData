@@ -59,6 +59,15 @@
                                 
                             </div>
                             <div class="form1-info-check"  id="password_tips" style="color: #aaaaaa"><p>6-18位，字母数字组成</p></div>
+                        </li>   
+                        <li class="clearfix">
+                            <div class="form1-title">
+                                确认密码
+                            </div>
+                            <div class="form1-info">
+                                <input type="password" value="" placeholder="再次输入密码" class="nor-inp focus" id="confirm_password" onChange="if_password_same()" />
+                            </div>
+                            <div class="form1-info-check"  id="confirm_password_tips" style="color: #aaaaaa">与密码保持一致</div>
                         </li>      
                        <li class="captcha-tag clearfix">
                             <div class="form1-title">
@@ -77,7 +86,7 @@
                             <div class="form1-info">
                                 <span class="my-checkbox">
                                     <input type="checkbox" id="mycheckbox" name="checkbox" onchange="if_checkbox_standard()">
-                                    <label id="agree"><em>阅读并接受</em></label><a href="#" target="_blank">《上海市高校“气象+大数据”应用创新大赛用户协议》</a>
+                                    <label id="agree"><em>阅读并接受</em></label><a href="javascript:" onclick="overlayProtocol()" target="_blank">《上海市高校“气象+大数据”应用创新大赛用户协议》</a>
                                 </span>
                             </div>
                             <div class="form1-info-check" id="protocol" style="color:#aaaaaa "></div>
@@ -166,6 +175,26 @@
                             return is_correct;
                         }
 
+                        function if_password_same(){
+                            var password=$("#password").val();
+                            var confirm_password=$("#confirm_password").val();
+                            var addHtml="√ 正确";
+                            var color="#22e42b";
+                            var is_correct=true;
+                            if(confirm_password==""){
+                                addHtml="确认密码不能为空";
+                                color="red";
+                                is_correct=false;
+                            }else if(password!=confirm_password){
+                                addHtml="确认密码与输入密码不一致";
+                                color="red";
+                                is_correct=false;          
+                            }
+                            $("#confirm_password_tips").empty().append(addHtml);
+                            document.getElementById('confirm_password_tips').style.color = color;
+                            return is_correct;
+                        }
+
                         function if_code_standard(){
                             var code=$("#code").val();
                             var addHtml="√ 正确";
@@ -220,6 +249,7 @@
                         function check(){
                             document.getElementById('username').style.border = "";
                             document.getElementById('password').style.border = "";
+                            document.getElementById('confirm_password').style.border = "";
                             document.getElementById('code').style.border = "";
                             document.getElementById('agree').style.color = "";
                             /*var is_correct=true;
@@ -249,6 +279,10 @@
                                 document.getElementById('password').style.border = "1px solid red";
                                 is_info_correct=false;
                             }
+                            if(!if_password_same()){
+                                document.getElementById('confirm_password').style.border = "1px solid red";
+                                is_info_correct=false;
+                            }
                             if(!if_code_standard()){
                                 document.getElementById('code').style.border = "1px solid red";
                                 is_info_correct=false;
@@ -276,3 +310,27 @@
     <!--reg-box End-->
     <!--end 内容区-->
 </div>
+<div id="modal-overlay-protocol"> 
+    <div class="modal-data-protocol">  
+        <h3>上海市高校“气象+大数据”应用创新大赛用户协议</h3>
+        <div class="protocol">
+            <p>上海市“气象+大数据”应用创新大赛网站仅为本次比赛提供用户注册报名、数据下载功能。本协议约束大赛组委会和用户之间的权利义务。</p><br>
+            <p>一、账号注册。为了能使用本网站服务，您同意以下事项：依本服务注册提示请您填写正确的手机号码、用户名和密码，并确保身份信息的有效性和合法性。若您提供任何违法、虚假资料，组委会有权终止您的帐号。</p><br>
+            <p>二、用户个人隐私信息保护。比赛将采取技术措施和其他必要措施，确保用户个人隐私信息安全，防止在本服务中收集的用户个人隐私信息泄露、毁损或丢失。在发生前述情形可能时，将及时采取补救措施。</p>
+            <p>组委会未经用户同意不向任何第三方公开、 透露用户个人隐私信息。但以下特定情形除外：
+            <p>(1)根据法律法规规定或有权机关的指示提供用户的个人隐私信息；</p>
+            <p>(2) 由于用户将其用户密码告知他人或与他人共享注册帐户与密码，由此导致的任何个人信息的泄漏；</p>
+            <p>(3) 任何由于黑客攻击、电脑病毒侵入及其他不可抗力事件导致用户个人隐私信息的泄露。</p><br>
+            <p>三、数据合法使用。本次比赛中专门提供的数据仅限本次比赛中使用，其他链接中提供的开放数据须遵守各数据拥有者所指定的使用规定，不得用于其他用途。一经发现，组委会保留追究其法律责任的权利。</p> 
+        </div>
+        <div class="submit">
+            <a onclick="overlayProtocol()" href="" class="btn-blue-sml">关闭</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function overlayProtocol(){
+        var e1 = document.getElementById('modal-overlay-protocol');          
+        e1.style.visibility =  (e1.style.visibility == "visible"  ) ? "hidden" : "visible";
+    }
+</script>

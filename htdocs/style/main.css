@@ -18,17 +18,17 @@
 .ueser_cnt a{font-size:14px;color:#666;line-height:32px;vertical-align:middle;}
 .ueser_cnt span{color:#999;margin:0 10px;}
 /*header-post*/
-.content-top {height:505px;background:url(../images/idx-banner.jpg) center 0 no-repeat;margin-top:64px;}
+.content-top {height:505px;background:url(../images/idx-banner-bg.jpg) center 0 no-repeat;margin-top:64px;}
 .host-unit {padding-top:300px; text-align:center;font-size:0;color:#fff;line-height:50px;}
 .host-unit span ,.host-unit em ,.host-unit b ,.host-unit img {vertical-align:middle;display:inline-block;}
 .host-unit b {font-weight:normal;margin-left:8px;}
-.host-unit span {font-size:14px; margin-top: 0px;}
+.host-unit span {font-size:16px; margin-top: 0px;}
 .host-unit em {height:20px;border-left:1px solid #a2b9f4;width:0;margin:120px 30px;}
 .host-unit span.mr30 {margin-right:30px;}
 /*footer*/
 .footer{background:#333;height:196px;overflow:hidden;*zoom:1;}
 .footer .foot-info {float:left;overflow:hidden;*zoom:1;padding-top:20px;}
-.foot-copyright {font-size:12px;color:#939393;margin-top:30px;}
+.foot-copyright {font-size:18px;color:#939393;margin-top:35px;}
 .foot-copyright p {margin-bottom:5px;}
 .foot-copyright span {margin-right:22px;}
 .footer .foot-right {float:right;padding-top:45px;padding-right:50px;text-align:right;}
@@ -47,21 +47,33 @@
 .side-tool-bar li.tool-top-link .tool-bar-show a span {display:none;}
 /*页面内容*/
 .content-main {background-color:#fff;padding-bottom:70px;}
-.content-box {padding-bottom:25px;margin-bottom:23px;border-bottom:2px solid #d3d3d3;}
+.content-box {padding-bottom:25px;margin-bottom:23px;border-bottom:2px solid #d3d3d3;background:#fff;}
 .content-box-title {margin-bottom:15px;}
 .content-box-title h2 {float:left;font-size:25px;color:#333;padding-top:25px;padding-left:18px;font-weight:bold;line-height:39px;}
 .content-box-content {padding:0 50px;}
+.content-box-content p {font-size:14px;}
 .schedule-box {margin-top:20px;margin-bottom:70px;min-height:280px;width:49%;}
 .number-1 {background-image: url(../images/number.png);background-position:0 0;width:60px;height:200px;display:inline-block;}
+.number-2 {background-image: url(../images/number.png);background-position:-62px 0;width:60px;height:200px;display:inline-block;}
+.number-3 {background-image: url(../images/number.png);background-position:-124px 0;width:60px;height:200px;display:inline-block;}
+.number-4 {background-image: url(../images/number.png);background-position:-186px 0;width:60px;height:200px;display:inline-block;}
+.number-5 {background-image: url(../images/number.png);background-position:122px 0;width:60px;height:200px;display:inline-block;}
+.number-6 {background-image: url(../images/number.png);background-position:60px 0;width:60px;height:200px;display:inline-block;}
 .block-content {margin-top:20px;margin-left:20px;width:332px;display:inline-block;vertical-align:top;}
 .block-top {display:block;}
-.block-icon1 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;vertical-align:middle;}
+.block-icon1 {background-image:url(../images/1.png);width:45px;height:45px;display:inline-block;}
+.block-icon2 {background-image:url(../images/2.png);width:45px;height:45px;display:inline-block;}
+.block-icon3 {background-image:url(../images/3.png);width:45px;height:45px;display:inline-block;}
+.block-icon4 {background-image:url(../images/4.png);width:45px;height:45px;display:inline-block;}
+.block-icon5 {background-image:url(../images/5.png);width:45px;height:45px;display:inline-block;}
+.block-icon6 {background-image:url(../images/6.png);width:45px;height:45px;display:inline-block;}
 .block-head {margin-left:20px;display:inline-block;}
+.block-head h3 {font-size:20px;}
 .block-text {width:312px;margin-top:17px;border-top:1px solid #000;font-size:16px;line-height:32px;padding-top:6px;text-align:justify;}
 .medal-box {padding-top:30px;display:block;}
 .img-box {float:left;position:relative;margin:0 40px;width:15%;height:162px;display:block;}
 .img-box img {vertical-align:middle;border:0;max-width:100%;}
-.img-box span {position:absolute;left:0;bottom:25px;width:100%;font-size:26px;color:#fff;text-align:center;font-weight:bold;}
+.img-box span {position:absolute;left:0;bottom:29px;width:100%;font-size:20px;color:#fff;text-align:center;font-weight:bold;}
 /*注册页面*/
 .logo-box {float:left;overflow:hidden;}
 .logo {float:left;}
@@ -86,6 +98,11 @@
 .has-regist-box {width:320px;text-align:center;}
 .has-regist-box .a {font-size:18px;color:#666;margin-top:110px;}
 .has-regist-box .b {margin-top:15px;}
+#modal-overlay-protocol {visibility: hidden;position: absolute;left: 0px;top: 0px;width:100%;height:100%;z-index: 1000;background-color: #000; opacity:0.9;}
+.modal-data-protocol {width:600px;margin:100px auto;background-color: #fff;border:1px solid #000;padding:15px;border-radius:5px;height:500px;}
+.modal-data-protocol h3 {font-weight:bold;font-size:16px;text-align:center;}
+.modal-data-protocol .protocol {margin:20px 20px;font-size:14px;}
+.modal-data-protocol .submit {text-align:center;}
 /*注册成功页面*/
 .reg-success {padding:70px 0 60px;}
 .reg-success-title {text-align:center;margin:0 0;}
@@ -114,16 +131,16 @@
 .reg-submit .btn-blue-big {width:350px;padding:0;}
 .my-select {position:relative;z-index:98;cursor:default;text-decoration:none;font-size:14px;display:inline-block;vertical-align:middle;}
 .my-select .my-value {position:relative;height:40px;}
-.my-select .my-value label {border:1px solid #e5e5e5;border-radius:2px;line-height:38px;height:38px;color:#2a3336;padding:0 10px;background:#fff;display:block;overflow:hidden;word-break:break-all;}
+.my-select .my-value select {border:1px solid #e5e5e5;border-radius:2px;line-height:38px;height:38px;color:#2a3336;padding:0 10px;background:#fff;display:block;overflow:hidden;word-break:break-all;}
 .my-select .my-value em {position:absolute;right:1px;top:1px;height:36px;width:36px;background:url(../images/my-select-arr.png) center center no-repeat;}
 .my-select .my-option {position:absolute;top:40px;left:0;width:100%;background-color:#fff;}
 .my-select dl {overflow-y:auto;overflow-x:hidden;zoom:1;border:1px solid #e5e5e5;margin-top:-1px;}
 .my-select dd {height:38px;line-height:38px;padding:0 10px;background:#fff;overflow:hidden;border-top:1px solid #dedede;width:100%;margin-top:-1px;}
 /*登录页面*/
-.login-box {height:533px;background:url(../images/idx-banner.jpg) center 0 no-repeat;}
+.login-box {height:533px;background:url(../images/logbg.jpg) center 0 no-repeat;}
 .login-form {float:right;margin:55px 53px 0 0;background-color:rgba(255,255,255,95);border-radius:4px;width:378px;height:424px;padding:2px;box-shadow:2px -2px 5px #4d91cd;}
-.login-title {height:72px;background-color:#effbff;border-radius:2px 2px 0 0;padding-left:56px;}
-.login-title h2 {font-size:24px;color:#545454;line-height:72px;padding-left:40px;}
+.login-title {height:72px;background-color:#effbff;border-radius:2px 2px 0 0;text-align:center;}
+.login-title h2 {font-size:24px;color:#545454;line-height:72px;}
 .login-cnt {padding:30px 55px 20px;}
 .form-list li {padding-bottom:18px;}
 .form-list li .inp {width:120px;padding:11px 10px;height:20px;font-size:16px;border:1px solid #dcdcdc;}
@@ -135,9 +152,9 @@
 .form-list-submit {margin-bottom:15px;}
 .form-list-submit .btn-red-big {display:block;}
 .go-regist {overflow:hidden;}
-.go-regist .now-regist {display:inline-block;padding-right:23px;font-size:16px;color:#ee1818;background:url(../images/now-reg-btn.png) right center no-repeat;}
+.go-regist .now-regist {display:inline-block;padding-right:23px;font-size:16px;color:#3f6ce1;background:url(../images/now-reg-btn.png) right center no-repeat;}
 /*个人中心*/
-.user-cnt-top {height:190px;background:url(../images/user-cnt-top.jpg) center 0 no-repeat;margin-bottom:30px;}
+.user-cnt-top {height:190px;background:url(../images/bg.jpg) center 0 no-repeat;margin-bottom:30px;}
 .user-cnt-head {float:left;margin:45px 30px 0 20px;width:104px;height:100px;}
 .user-cnt-head img {width:100px;height:100px;border:2px solid #fff;border-radius:50%;box-shadow:0 8px 8px #c6cfd1;}
 .user-cnt-dtl {float:left;width:770px;margin-top:42px;}
@@ -155,7 +172,7 @@
 .user-edit {width:117px;height:30px;margin-top:65px;}
 .user-wp-main {width:966px;margin-left:70px;}
 .user-wp-title {padding-bottom:10px;border-bottom:1px solid #e5e5e5;margin:40px 0 20px;}
-.user-wp-title h4 {float:left;font-size:16px;color:#2a3336;font-weight:bold;}
+.user-wp-title h4 {float:left;font-size:20px;color:#2a3336;font-weight:bold;}
 .user-wp-info {overflow:hidden;}
 .user-wp-info .title {font-size:14px;color:red;margin-left:250px;}
 .my-project-form {width:100%;margin-left:120px;}
@@ -164,13 +181,110 @@
 .my-project-form em {color:#fe5656;margin-right:5px;}
 .my-project-form textarea {border:1px solid #dadada;padding:10px;font-size:14px;line-height:1.5em;height:150px;margin-top:10px;}
 .my-project-form .textarea-tip {line-height:25px;text-align:right;color:#a9a9a9;}
-.form-submit a {height:36px;line-height:36px;padding:0 30px 0;width:190px;margin-left:180px;margin-bottom:50px;}
+.form-submit input {border-collapse:collapse;height:36px;line-height:36px;padding:0 30px 0;margin-left:180px;margin-bottom:50px;}
 .pg-wrp {overflow:hidden;}
 .my-project-form .upload-btn {width:98px;height:28px;position:relative;overflow:hidden;margin:10px 0;margin-right:10px;}
-.my-project-form .upload-file {position:absolute;left:0;top:0;font-size:50px;cursor:pointer;opacity:0;}
+.upload-file {position:absolute;left:0;top:0;font-size:50px;cursor:pointer;opacity:0;}
 .upload-tip {font-size:12px;color:#a9a9a9;padding:5px 0;margin-top:10px;}
 .file-list ul{overflow:hidden;}
 .file-list li {float:left;width:121px;height:130px;margin:0 30px 13px 0;}
 .file-list li .file-pic {width:109px;height:100px;border:1px solid #e5e5e5;background:#f4f4f4;margin-bottom:10px;}
 .file-list li .file-pic img {width:109px;height:100px;}
 .file-list li .file-name {font-size:12px;color:#323a45;width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;}
+.program-con {padding:20px 0;}
+.program-l {float:left;width:657px;}
+.program-title {padding:15px 0;border-bottom:1px solid #e5e5e5;}
+.program-name {float:left;font-size:24px;color:#333;padding-left:10px;}
+.program-box {margin-bottom:30px;margin-top:20px;}
+.program-box-title {height:48px;padding:0 10px;background:#fbfbfb;border:1px solid #efefef;}
+.program-box-title h4{font-size:18px;font-weight:bold;line-height:48px;color:#333;}
+.program-box-intro {font-size:14px;line-height:24px;color:#666;padding:15px 10px;}
+.program-file-box {margin-top:20px;position:relative;overflow:hidden;}
+.program-file-box li {border:1px solid #efefef;margin-right:16px;width:146px;height:192px;background:#fafafa;border-radius:4px;overflow:hidden;text-align:center;float:left;margin-bottom:30px;}
+.program-file-box img {display:block;margin:15px auto;width:90px;height:90px;}
+.program-file-box span {width:146px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;color:#999;font-size:14px;margin-bottom:10px;}
+.s-bluebtn {display:inline-block;background:#5a85ef;padding:0 15px;height:30px;line-height:30px;border-radius:2px;font-size:12px;color:#fff;}
+.team-r {float:right;width:500px;}
+.team-box {border:1px solid #efefef;background:#f8faff;border-radius:3px;border-bottom:30px;overflow:hidden;margin-bottom:40px;}
+.team-box h4 {height:50px;background:#efefef;line-height:50px;font-size:16px;color:#333;font-weight:bold;padding:0 12px;border-radius:3px 3px 0 0;}
+.team-box span {color:#666;padding-left:20px;}
+.team-box table {width:100%;}
+.team-box th {font-size:14px;color:#666;font-weight:bold;white-space:nowrap;}
+.team-box td {font-size:12px;color:#666;padding:15px 8px;text-align:left;border-bottom:1px dotted #e5e5e5;}
+.team-box-father {position:relative;}
+.program-edit {width:117px;height:30px;margin-top:20px;margin-left:245px;margin-bottom:37px;}
+/* 规则界面 */
+.rule-content {padding-bottom:50px;}
+.rule-con-top {text-align:center;padding:100px 0;}
+.rule-con-top h1 {font-size:48px;margin-bottom:30px;letter-spacing:10px;color:#fff;}
+.rule-con-top p {font-size:21px;font-weight:lighter;letter-spacing:3px;color:#fff;}
+.rule-title {margin-top:40px;margin-bottom:40px;}
+.rule-con-title {width:324px;padding:0 15px;float:left;}
+.rule-con-title h2 {font-size:38px;margin-bottom:10px;margin-top:20px;line-height:1.1;color:#fff;}
+.rule-con-tit-line {float:left;width:596px;padding:0 15px;}
+.rule-con-tit-line hr {margin-top:41px;border-top:1px solid #eee;border-bottom:20px;}
+.rule-con-list {width:659px;float:left;padding:0 15px;}
+.rule-con-img {width:460px;float:left;padding:0 15px;text-align:center;}
+.rule-con-img img {vertical-align:middle;}
+.rule-con-content {border-radius:5px;background-color:#fff;line-height:1.8;padding:18px 40px 5px;margin-top:15px;}
+.rule-con-content p {font-size:16px;margin:0 0 10px;}
+/* 数据下载 */
+.data-con-top {text-align:center;padding:80px 0;}
+.data-con-top h1 {font-size:48px;margin-bottom:30px;letter-spacing:10px;color:#fff;}
+.data-box {width:70%;margin-left:15%;margin-right:15%;padding-bottom:40px;margin-bottom:50px;background-color:rgba(255,255,255,0.8);border-radius:5px;padding-top:20px;}
+.data-box-top {padding:0 20px;}
+.data-box-top a {margin-top:15px;}
+.data-box-top h3{font-size:20px;margin-bottom:10px;margin-top:20px;line-height:1.1;border-bottom:2px solid #ededed;padding-bottom:10px;display:inline-block;}
+.data-box-middle {padding:0 20px;margin-top:20px;}
+.data-box-middle-left {display:inline-block;float:left;width:13.2%;margin-top:11px;}
+.label-box {background-color:#00aeee;font-size:18px;color:#fff;padding:15px 25px;}
+.data-box-middle-middle {display:inline-block;float:left;width:40.8%;}
+.data-box-middle-middle h5 {font-size:14px;padding-bottom:5px;}
+.data-box-middle-middle p {font-size:16px;}
+.data-box-middle-right {display:inline-block;float:left;width:45.8%}
+.data-box-middle-right h5 {font-size:14px;padding-bottom:5px;}
+.data-box-middle-right p {font-size:16px;}
+.data-box-bottom {margin:0 20px;margin-top:20px;margin-bottom:20px;border-bottom:1px dotted #000;padding-bottom:30px;}
+.data-box-bottom h5 {font-size:14px;padding-bottom:5px;color:#00aeee;}
+.data-box-bottom p {font-size:16px;}
+.data-box-table {padding:0 20px;margin-top:40px;text-align:left;margin-bottom:50px;}
+.data-box-table table {width:100%;text-align:center;color:#666;}
+.data-box-table table tr {height:40px;border-bottom:1px solid #ededed;}
+.data-box-table table tr td {font-size:14px;}
+.data-box-table table th {font-size:14px;padding-bottom:5px;color:#000;}
+.data-box-table table .odd {background:#f8faff;}
+.data-box-table table .even {background:#fff;}
+.data-box-page {text-align:center;padding:0 20px;}
+.data-box-page a {border:1px solid #000;padding:8px;margin:0 3px;font-size:14px;background:#fff;}
+.data-box-page span {margin-left:10px;font-size:14px;}
+.data-box-page input {width:40px;line-height:30px;text-align:center;border:1px solid #dadada;margin:0 3px;font-size:14px;}
+.data-con-foot {width:70%;margin-left:15%;margin-right:15%;padding-bottom:20px;background-color:rgba(255,255,255,0.8);border-radius:5px;}
+.data-con-foot-link {padding:0 20px;font-size:18px;padding-bottom:10px;}
+.data-con-foot-linkpic {padding:0 20px;text-align:center;padding-top:20px;}
+.linkpic {padding-bottom:30px;}
+.linkpic span {padding:0 30px;}
+.data-box-bottom-null {border-bottom:1px dotted #000;padding:0 20px 20px 20px;margin:0 20px;}
+.hr-20 {height:60px;}
+/* 数据修改 */
+.program-box-intro textarea {border:1px solid #dadada;padding:10px;font-size:14px;line-height:2em;height:150px;margin-top:10px;color:#666;}
+.team-box .nor-inp {width:45px;height:15px;line-height:18px;border:1px solid #dadada;font-size:14px;padding:10px;}
+#modal-overlay {visibility: hidden;position: absolute;left: 0px;top: 0px;width:100%;height:100%;text-align:center;z-index: 1000;background-color: #000; opacity:0.9;}
+.modal-data{width:500px;margin: 100px auto;background-color: #fff;border:1px solid #000;padding:15px;text-align:center;}
+.add-member {float:right;}
+.form2-title {float:left;width:75px;text-align:right;line-height:40px;font-size:15px;color:#666;font-weight:bold;}
+.modal-data #form2 ul li {padding-bottom:20px;}
+#modal-overlay-teacher {visibility: hidden;position: absolute;left: 0px;top: 0px;width:100%;height:100%;text-align:center;z-index: 1000;background-color: #000; opacity:0.9;}
+.modal-data-teacher{width:500px;margin: 100px auto;background-color: #fff;border:1px solid #000;padding:15px;text-align:center;}
+.form3-title {float:left;width:75px;text-align:right;line-height:40px;font-size:15px;color:#666;font-weight:bold;}
+.modal-data-teacher #form3 ul li {padding-bottom:20px;}
+/* 添加队员 */
+.user-wp-bd {overflow:hidden;}
+.member-add-table {width:100%;margin-bottom:30px;}
+.member-add-table tr {border-bottom:1px dashed #e5e5e5;}
+.member-add-table th {padding-right:10px;color:#666;text-align:center;font-size:16px;}
+.member-add-table td {padding:15px 10px;color:#666;font-size:16px;}
+.user-wp-title1 {padding-bottom:10px;border-bottom:1px solid #e5e5e5;margin:40px 0 20px;}
+.user-wp-title1 h4 {float:left;font-size:18px;color:#2a3336;font-weight:bold;}
+.user-wp-title1 i {color:red;}
+.user-wp-title1 em {font-size:14px;color:red;}
+.finish {margin-bottom:60px;margin-top:40px;margin-left:180px;}

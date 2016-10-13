@@ -44,10 +44,18 @@ class Project extends CI_Controller
                     $data['project']=$data['project'][0];
                     $data['member']=$this->member->get_all_members($data['project']['project_id'])->result_array();
                     $data['teacher']=$this->member->get_all_teachers($data['project']['project_id'])->result_array();
-                    echo "<script>alert('您已报名，请前往个人中心查看报名情况！')</script>";
-                    $this->load->view('account/percenter',$data);  
-                    $this->load->view('templates/footer',$data);  
-
+                    $member_count=count($data['member']);
+                    $teacher_count=count($data['teacher']);
+                    if($member_count>7||$teacher_count!=1){
+                        $this->load->view('project/teamadmin',$data);
+                        $this->load->view('templates/footer');
+                        $data['message']="请先完善团队信息，团队1-8人，指导老师1人";
+                        $this->load->view('errors/blank',$data); 
+                    }else{
+                        echo "<script>alert('您已报名，请前往个人中心查看报名情况！')</script>";
+                        $this->load->view('account/percenter',$data);  
+                        $this->load->view('templates/footer',$data);  
+                    }
                 }else{
                     $this->load->view('project/procreate',$data);  
                     $this->load->view('templates/footer');  
@@ -117,10 +125,15 @@ class Project extends CI_Controller
     }
 
     public function add_member(){
-        $this->member->add_member($_POST);
-        $id=$this->db->insert_id();
-        $result=$this->member->get_by_member_id($id)->result_array()[0];
-        echo json_encode($result);
+        $member_count=count($this->member->get_all_members($_POST['project_id'])->result_array());
+        if($member_count>7){
+            echo json_encode("1");
+        }else{
+            $this->member->add_member($_POST);
+            $id=$this->db->insert_id();
+            $result=$this->member->get_by_member_id($id)->result_array()[0];
+            echo json_encode($result);
+        }
     }
 
     public function delete_member(){
@@ -134,6 +147,12 @@ class Project extends CI_Controller
         $data['project']=$this->project->get_project_by_user_id($user_id)->result_array()[0];
         $data['member']=$this->member->get_all_members($data['project']['project_id'])->result_array();
         $data['teacher']=$this->member->get_all_teachers($data['project']['project_id'])->result_array();
+        if(count($data['teacher'])!=1||count($data['member'])>7){
+            $this->load->view('project/teamadmin',$data);
+            $this->load->view('templates/footer');
+            $data['message']="请先完善团队信息，团队1-8人，指导老师1人";
+            $this->load->view('errors/blank',$data); 
+        }
         $this->load->view('project/perchange',$data);
         $this->load->view('templates/footer');
     }

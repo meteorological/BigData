@@ -1,5 +1,5 @@
 <!-- 规则内容 -->
-<div class="content">
+<div class="content" style="background:url(../../../images/bg.jpg) no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size: cover;">
 	<div class="wrap">
 		<div class="rule-con-top">
 			<h1>大赛规则</h1>
@@ -30,7 +30,7 @@
 			    	</div>
 			    </div>
 			    <div class="rule-con-img">
-			    	<img src="#">
+			    	<img src="../../../images/team.png">
 			    </div>
 			</div>
 			<div class="rule-content clearfix">
@@ -43,7 +43,7 @@
 				    </div>
 			    </div>
 			    <div class="rule-con-img">
-			    	<img src="#">
+			    	<img src="../../../images/ideal.jpg">
 			    </div>
 			    <div class="rule-con-list">
 			    	<div class="rule-con-content">
@@ -61,7 +61,7 @@
 			    	<div class="rule-con-content">
 			    		<p>3. 进入复赛的参赛团队获取完整数据，基于创意，完成原型作品的开发实现，并根据初赛方案进行改进和完善，加入技术细节、原型测试、落地计划等内容，形成最终作品文档，在截止日前提交作品原型和文档（包括但不限于PDF、PPT、视频等方式）。</p>
 			    	</div>
-			    	<div>
+			    	<div class="rule-con-content">
 			    		<p>4. 决赛路演由参赛队伍对作品进行现场展示，并需从商业价值或社会价值角度来介绍可行的作品落地计划。</p>
 			    	</div>
 			    </div>
@@ -87,7 +87,7 @@
 			    	</div>
 			    </div>
 			    <div class="rule-con-img">
-			    	<img src="#">
+			    	<img src="../../../images/content.png">
 			    </div>
 			</div>
 			<div class="rule-content clearfix">
@@ -100,7 +100,7 @@
 				    </div>
 			    </div>
 			    <div class="rule-con-img">
-			    	<img src="#">
+			    	<img src="../../../images/score.png">
 			    </div>
 			    <div class="rule-con-list">
 			    	<div class="rule-con-content">

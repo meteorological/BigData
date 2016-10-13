@@ -17,15 +17,15 @@
 <div class="header">
   <div class="wrap clearfix">
   	<div class="head_logo fl">
-  	    <a href="index.html" class="logo"><img src="../../../images/logo.png"></a>
+  	    <a href="<?= site_url('home/index')?>" class="logo"><img src="../../../images/logo.png"></a>
   	</div>
     <div class="fr">
         <div class="head_side fl">
             <ul class="main_nav clearfix">
-                <li class="fl"><a href="index.html">SMDA大赛</a></li>
-                <li class="fl"><a href="rule.html">大赛规则</a></li>
-                <li class="fl"><a href="download.html">比赛数据</a></li>
-                <li class="fl"><a href="procreate.html">报名通道</a></li>
+                <li class="fl"><a href="<?= site_url('home/index')?>">SMDA大赛</a></li>
+                <li class="fl"><a href="<?= site_url('home/rule')?>">大赛规则</a></li>
+                <li class="fl"><a href="<?= site_url('data/index')?>">比赛数据</a></li>
+                <li class="fl"><a href="<?= site_url('project/index')?>">报名通道</a></li>
             </ul>
         </div>
         <div class="head_login fr">
@@ -47,7 +47,7 @@
     <div class="user-cnt-top">
         <div class="wrap clearfix">
             <div class="user-cnt-head">
-                <img src="#" data-bd-imgshare-binded="1" id="userimg">
+                <img src="../../../images/head-photo.png" data-bd-imgshare-binded="1" id="userimg">
             </div>
             <div class="user-cnt-dtl">
                 <div class="u-name">
@@ -96,7 +96,19 @@
                         </div>
                         <div class="user-wp-bd">
                             <table class="member-add-table">
-                                <tbody id="member_tbody">              
+                                <tbody id="member_tbody">  
+                                  <?php for($i=0;isset($member)&&$i<count($member);$i++):?>
+                                    <tr id="<?= 'tr_'.$member[$i]['id']?>">
+                                      <th>队员<?= ($i+1)?></th>
+                                      <td><?= $member[$i]['member_name']?></td>
+                                      <td><?= $member[$i]['school']?></td>
+                                      <td><?= $member[$i]['major']?></td>
+                                      <td><?= $member[$i]['education']?></td>
+                                      <td><?= $member[$i]['admission_year']?></td>
+                                      <td><?= $member[$i]['telephone']?></td>
+                                      <td align="right"><a onclick="delete_member(<?= $member[$i]['id']?>)" href=\"javascript:;\" class=\"btn-blue-sml\">删除</a></td>
+                                    </tr>
+                                  <?php endfor;?>  
                                 </tbody>
                                 <tr id="add_member_row" style="visibility: hidden;">
                                         <td>队员1</td>
@@ -123,15 +135,17 @@
                         <div class="user-wp-bd">
                             <table class="member-add-table">
                                 <tbody id="teacher_tbody">
-                                    <!-- <tr>
-                                        <td>朱丹</td>
-                                        <td>团委老师</td>
-                                        <td>华东师范大学</td>
-                                        <td>软件开发应用</td>
-                                        <td>13917829004@qq.com</td>
-                                        <td align="right"><a href="javascript:;" class="btn-blue-sml">确认</a></td>
-                                    </tr> -->
-                                    
+                                    <?php for($i=0;isset($teacher)&&$i<count($teacher);$i++):?>
+                                    <tr id="<?= 'tr_'.$teacher[$i]['id']?>">
+                                      <th>队员<?= ($i+1)?></th>
+                                      <td><?= $teacher[$i]['member_name']?></td>
+                                      <td><?= $teacher[$i]['education']?></td>
+                                      <td><?= $teacher[$i]['school']?></td>
+                                      <td><?= $teacher[$i]['major']?></td>
+                                      <td><?= $teacher[$i]['telephone']?></td>
+                                      <td align="right"><a onclick="delete_teacher(<?= $teacher[$i]['id']?>)" href=\"javascript:;\" class=\"btn-blue-sml\">删除</a></td>
+                                    </tr>
+                                  <?php endfor;?>                                
                                 </tbody>
                                 <tr id="add_teacher_row"  style="visibility:hidden;">
                                         <th>指导老师</th>
@@ -158,10 +172,8 @@
 </div>
       <script type="text/javascript">
       function save_team(){
-        if(member_num<3){
-            alert('团队成员至少两人');
-        }else if(member_num>5){
-            alert('团队成员最多五人');
+        if(member_num>8){
+            alert('团队成员最多七人');
         }else if(teacher_num==0){
             alert('指导老师至少一人');
         }else if(teacher_num>1){
@@ -170,11 +182,11 @@
             window.location.href="<?= site_url('account/personal')?>";
         }
       }
-      var member_num=1;
+      var member_num=<?= (isset($member))?(count($member)+1):1?>;
       var teacher_num=0;
         function show_add_member(){
-            if(member_num>5){
-            alert('团队成员最多五人！');
+            if(member_num>7){
+            alert('团队成员最多七人');
         }else {
           document.getElementById('add_member_row').style.visibility="visible";
           document.getElementById('member_a').style.visibility="hidden";
@@ -210,8 +222,8 @@
           document.getElementById('member_a').style.visibility="visible";
         }
         function add_member(){
-        if(member_num>5){
-            alert('团队成员最多五人！');
+        if(member_num>7){
+            alert('团队成员最多七人！');
         }else if(!if_name_standard($("#member_name").val())){
             alert('请输入正确的姓名');
           }else if($("#school").val()==""){
@@ -241,18 +253,22 @@
               url : "<?= site_url("project/add_member/") ?>",
               cache : false,
               success:function(data){
-                var addHtml="<tr id=\"tr_"+data['id']+"\">";
-                addHtml=addHtml+"<th>队员"+(member_num++)+"</th>"
-                addHtml=addHtml+"<td>"+data['member_name']+"</td>";
-                addHtml=addHtml+"<td>"+data['school']+"</td>";
-                addHtml=addHtml+"<td>"+data['major']+"</td>";
-                addHtml=addHtml+"<td>"+data['education']+"</td>";
-                addHtml=addHtml+"<td>"+data['admission_year']+"</td>";
-                addHtml=addHtml+"<td>"+data['telephone']+"</td>";
-                addHtml=addHtml+"<td align=\"right\"><a onclick=\"delete_member("+data['id']+")\" href=\"javascript:;\" class=\"btn-blue-sml\">删除</a></td>";
-                addHtml=addHtml+"</tr>";
-                $("#member_tbody").append(addHtml);
-                cancle_add_member();
+                if(data=="1"){
+                  alert('团队成员最多七人！');
+                }else{
+                  var addHtml="<tr id=\"tr_"+data['id']+"\">";
+                  addHtml=addHtml+"<th>队员"+(member_num++)+"</th>"
+                  addHtml=addHtml+"<td>"+data['member_name']+"</td>";
+                  addHtml=addHtml+"<td>"+data['school']+"</td>";
+                  addHtml=addHtml+"<td>"+data['major']+"</td>";
+                  addHtml=addHtml+"<td>"+data['education']+"</td>";
+                  addHtml=addHtml+"<td>"+data['admission_year']+"</td>";
+                  addHtml=addHtml+"<td>"+data['telephone']+"</td>";
+                  addHtml=addHtml+"<td align=\"right\"><a onclick=\"delete_member("+data['id']+")\" href=\"javascript:;\" class=\"btn-blue-sml\">删除</a></td>";
+                  addHtml=addHtml+"</tr>";
+                  $("#member_tbody").append(addHtml);
+                  cancle_add_member();
+                }
               }
             });
           }

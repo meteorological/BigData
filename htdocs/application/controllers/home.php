@@ -55,7 +55,7 @@ class Home extends CI_Controller
             $this->load->view('home/rule',$data);   
             $this->load->view('templates/footer');   
         }else{
-            $this->load->view('templates/header',$data);   
+            $this->load->view('templates/header');   
             $this->load->view('home/rule');   
             $this->load->view('templates/footer');   
         }  

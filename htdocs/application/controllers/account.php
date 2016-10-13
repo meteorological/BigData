@@ -45,9 +45,17 @@ class Account extends CI_Controller
             	$data['user']=$this->account->get_user_detail_by_id($user_id)->result_array()[0];
             	$data['project']=$this->project->get_project_by_user_id($user_id)->result_array();
             	if(count($data['project'])!=0){
-            		$data['project']=$data['project'][0];
+                    $data['project']=$data['project'][0];
             		$data['member']=$this->member->get_all_members($data['project']['project_id'])->result_array();
             		$data['teacher']=$this->member->get_all_teachers($data['project']['project_id'])->result_array();
+            		$member_count=count($data['member']);
+                    $teacher_count=count($data['teacher']);
+                    if($member_count>7||$teacher_count!=1){
+                        $this->load->view('project/teamadmin',$data);
+                        $this->load->view('templates/footer');
+                        $data['message']="请先完善团队信息，团队1-8人，指导老师1人";
+                        $this->load->view('errors/blank',$data); 
+                    }
             	}
             	$this->load->view('account/percenter',$data);
             	$this->load->view('templates/footer');
@@ -274,7 +282,7 @@ class Account extends CI_Controller
         //模糊点颜色
         $pix  = imagecolorallocate($im, 187, 230, 247); 
         //字体色
-        $font = imagecolorallocate($im, 41, 163, 238); 
+        $font = imagecolorallocate($im, 41, 101, 238); 
         //绘模糊作用的点
         mt_srand();
         for ($i = 0; $i < 1000; $i++) {

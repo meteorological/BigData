@@ -20,7 +20,7 @@
     <div class="fr">
         <div class="head_side fl">
             <ul class="main_nav clearfix">
-                <li class="fl"><a href="<?= site_url('home/index')?>">MDA大赛</a>
+                <li class="fl"><a href="<?= site_url('home/index')?>">SMDA大赛</a>
                 </li>
                 <li class="fl">
                     <a href="<?= site_url('home/rule')?>">大赛规则</a>
@@ -49,7 +49,7 @@
     <div class="user-cnt-top">
         <div class="wrap clearfix">
             <div class="user-cnt-head">
-                <img src="<?= site_url('images/head-photo.png')?>" data-bd-imgshare-binded="1" id="userimg">
+                <img src="../../../images/head-photo.png" data-bd-imgshare-binded="1" id="userimg">
             </div>
             <div class="user-cnt-dtl">
                 <div class="u-name">

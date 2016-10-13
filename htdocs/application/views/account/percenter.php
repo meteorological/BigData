@@ -156,7 +156,11 @@
                 </div>
                 <div class="team-r">
                     <div class="program-edit">
+                    <?php if(count($project)!=0):?>
                         <a href="<?= site_url('project/edit_project') ?>" class="btn-blue-sml">+编辑资料</a>
+                    <?php endif;if(count($project)==0):?>
+                        <a href="<?= site_url('project/index') ?>" class="btn-blue-sml">点击报名</a>
+                    <?php endif;?>
                     </div>            
                     <div class="team-box-father">
                         <div class="team-box">

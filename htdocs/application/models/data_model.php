@@ -76,6 +76,12 @@ class Data_model extends CI_Model
         $result = $query->result_array();
         return $result;
     }
+
+    public function record_download($user_id){
+        $data['user_id']=$user_id;
+        $data['download_time']=date("y-m-d h:i:s",time());
+        $this->db->insert('bigdata_download',$data);
+    }
 }
 
 ?>

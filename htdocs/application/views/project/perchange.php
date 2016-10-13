@@ -52,7 +52,7 @@ a{cursor: pointer;}
     <div class="user-cnt-top">
         <div class="wrap clearfix">
             <div class="user-cnt-head">
-                <img src="#" data-bd-imgshare-binded="1" id="userimg">
+                <img src="../../../images/head-photo.png" data-bd-imgshare-binded="1" id="userimg">
             </div>
             <div class="user-cnt-dtl">
                 <div class="u-name">
@@ -85,10 +85,10 @@ a{cursor: pointer;}
     <div class="content-pro-box">
         <div class="wrap">
             <div class="program-content clearfix">
-                <form id="form1" method="post" name="form1" enctype="multipart/form-data" onsubmit="return check()">      
+                <form id="form1" method="post" name="form1" enctype="multipart/form-data">      
                 <div class="program-l">
                     <div class="program-title clearfix">
-                        <h3 class="program-name">关于雾霾天数据的可视化研究</h3>
+                        <h3 class="program-name"><?= $project['project_name']?></h3>
                     </div>
                     <input type="hidden" id="project_id" name="project_id" value="<?=$project['project_id']?>">        
                     <div class="program-box">
@@ -371,9 +371,8 @@ function get_pdf_name(target){
         }
         $("#pdf_error").empty().append(addHtml);
     }
-var member_num=<?= count($member)?>;
+var member_num=<?= count($member)+1?>;
 function delete_member(id){
-    if(member_num>2){
     $
     .ajax({
     type : "post",
@@ -388,9 +387,6 @@ function delete_member(id){
     member_num--;
     }
     });
-}else{
-    alert('项目成员至少二人');
-}
 }
     function overlay(id){
         //id -1 添加 -2 取消
@@ -459,8 +455,8 @@ function delete_member(id){
                 $("#member_id").val("");
             }
         }else{
-            if(member_num>5){
-                alert('项目成员最多五人');
+            if(member_num>7){
+                alert('项目成员最多七人');
             }else{
             e1.style.visibility="visible";
         }}

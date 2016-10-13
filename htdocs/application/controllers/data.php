@@ -21,7 +21,7 @@ class Data extends CI_Controller
         $user_id=$this->account->loginAuthorize();
         if($user_id!=FALSE){
             $data['user']=$this->account->select_by_id($user_id)->result_array()[0];
-            $this->load->view('templates/header');   
+            $this->load->view('templates/header',$data);   
             $this->load->view('data/index',$data);   
             $this->load->view('templates/footer');   
         }else{
@@ -45,17 +45,12 @@ class Data extends CI_Controller
             }else{
                 $data['project']=$this->project->get_project_by_user_id($user_id)->result_array();
                 $data['user']=$this->account->get_user_detail_by_id($user_id)->result_array()[0];
-                if(count($data['project'])==0){
-                    $this->load->view('project/procreate',$data); 
-                    $data['message']="请先报名比赛";
-                    $this->load->view('errors/blank',$data); 
-                }else{
-                    header("Content-type: text/plain"); 
-                    header("Content-Disposition:attachment;filename=气象大数据.txt"); 
-                    header('Cache-Control: max-age=10');
-                    readfile(dirname(APPPATH).'/documents/bigdata/bigdata.txt');
-                    $this->index(); 
-                }    
+                $this->data->record_download($user_id);
+                header("Content-type: text/plain"); 
+                header("Content-Disposition:attachment;filename=气象大数据.txt"); 
+                header('Cache-Control: max-age=10');
+                readfile(dirname(APPPATH).'/documents/bigdata/bigdata.txt');
+                $this->index();     
             }
         }else{
             $this->load->view('account/login');
