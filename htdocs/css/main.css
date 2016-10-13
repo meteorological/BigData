@@ -18,7 +18,7 @@
 .ueser_cnt a{font-size:14px;color:#666;line-height:32px;vertical-align:middle;}
 .ueser_cnt span{color:#999;margin:0 10px;}
 /*header-post*/
-.content-top {height:505px;background:url(../images/idx-banner.jpg) center 0 no-repeat;margin-top:64px;}
+.content-top {height:505px;background:url(../images/idx-banner-bg.jpg) center 0 no-repeat;margin-top:64px;}
 .host-unit {padding-top:300px; text-align:center;font-size:0;color:#fff;line-height:50px;}
 .host-unit span ,.host-unit em ,.host-unit b ,.host-unit img {vertical-align:middle;display:inline-block;}
 .host-unit b {font-weight:normal;margin-left:8px;}
@@ -132,10 +132,10 @@
 .my-select dl {overflow-y:auto;overflow-x:hidden;zoom:1;border:1px solid #e5e5e5;margin-top:-1px;}
 .my-select dd {height:38px;line-height:38px;padding:0 10px;background:#fff;overflow:hidden;border-top:1px solid #dedede;width:100%;margin-top:-1px;}
 /*登录页面*/
-.login-box {height:533px;background:url(../images/idx-banner.jpg) center 0 no-repeat;}
+.login-box {height:533px;background:url(../images/idx-banner-bg.jpg) center 0 no-repeat;}
 .login-form {float:right;margin:55px 53px 0 0;background-color:rgba(255,255,255,95);border-radius:4px;width:378px;height:424px;padding:2px;box-shadow:2px -2px 5px #4d91cd;}
-.login-title {height:72px;background-color:#effbff;border-radius:2px 2px 0 0;padding-left:56px;}
-.login-title h2 {font-size:24px;color:#545454;line-height:72px;padding-left:40px;}
+.login-title {height:72px;background-color:#effbff;border-radius:2px 2px 0 0;text-align:center;}
+.login-title h2 {font-size:24px;color:#545454;line-height:72px;}
 .login-cnt {padding:30px 55px 20px;}
 .form-list li {padding-bottom:18px;}
 .form-list li .inp {width:120px;padding:11px 10px;height:20px;font-size:16px;border:1px solid #dcdcdc;}
