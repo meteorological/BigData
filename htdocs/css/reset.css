@@ -34,7 +34,7 @@ a:hover{text-decoration:none;}
 .mr15{margin-right:15px;}
 .mb15{margin-bottom:15px;}
 /*btn*/
-.btn-red-big{display:inline-block;height:42px;line-height:42px;background:#cc0000;font-size:16px;color:#fff;text-align:center;padding:0 40px;border-radius:3px;}
+.btn-red-big{display:inline-block;height:42px;line-height:42px;background:#3f6ce1;font-size:16px;color:#fff;text-align:center;padding:0 40px;border-radius:3px;}
 .btn-blue-big{display:inline-block;height:42px;line-height:42px;background:#4877ed;font-size:16px;color:#fff;text-align:center;padding:0 40px;border-radius:3px;}
 .btn-gray-big{display:inline-block;height:40px;line-height:40px;background:#f6f6f6;border:1px solid #dadada;font-size:14px;color:#666;text-align:center;padding:0 39px;border-radius:3px;}
 .btn-white-big{display:inline-block;height:38px;line-height:38px;background:#fff;border:1px solid #e5e5e5;font-size:14px;color:#2a3336;text-align:center;padding:0 39px;border-radius:3px;}

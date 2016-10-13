@@ -47,7 +47,7 @@
 .side-tool-bar li.tool-top-link .tool-bar-show a span {display:none;}
 /*页面内容*/
 .content-main {background-color:#fff;padding-bottom:70px;}
-.content-box {padding-bottom:25px;margin-bottom:23px;border-bottom:2px solid #d3d3d3;background:#ededed;}
+.content-box {padding-bottom:25px;margin-bottom:23px;border-bottom:2px solid #d3d3d3;background:#fff;}
 .content-box-title {margin-bottom:15px;}
 .content-box-title h2 {float:left;font-size:25px;color:#333;padding-top:25px;padding-left:18px;font-weight:bold;line-height:39px;}
 .content-box-content {padding:0 50px;}
@@ -61,12 +61,12 @@
 .number-6 {background-image: url(../images/number.png);background-position:60px 0;width:60px;height:200px;display:inline-block;}
 .block-content {margin-top:20px;margin-left:20px;width:332px;display:inline-block;vertical-align:top;}
 .block-top {display:block;}
-.block-icon1 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
-.block-icon2 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
-.block-icon3 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
-.block-icon4 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
-.block-icon5 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
-.block-icon6 {background-image:url(../images/icons.png);background-position:-252px -38px;width:34px;height:37px;display:inline-block;}
+.block-icon1 {background-image:url(../images/1.png);width:45px;height:45px;display:inline-block;}
+.block-icon2 {background-image:url(../images/2.png);width:45px;height:45px;display:inline-block;}
+.block-icon3 {background-image:url(../images/3.png);width:45px;height:45px;display:inline-block;}
+.block-icon4 {background-image:url(../images/4.png);width:45px;height:45px;display:inline-block;}
+.block-icon5 {background-image:url(../images/5.png);width:45px;height:45px;display:inline-block;}
+.block-icon6 {background-image:url(../images/6.png);width:45px;height:45px;display:inline-block;}
 .block-head {margin-left:20px;display:inline-block;}
 .block-head h3 {font-size:20px;}
 .block-text {width:312px;margin-top:17px;border-top:1px solid #000;font-size:16px;line-height:32px;padding-top:6px;text-align:justify;}
@@ -98,6 +98,11 @@
 .has-regist-box {width:320px;text-align:center;}
 .has-regist-box .a {font-size:18px;color:#666;margin-top:110px;}
 .has-regist-box .b {margin-top:15px;}
+#modal-overlay-protocol {visibility: hidden;position: absolute;left: 0px;top: 0px;width:100%;height:100%;z-index: 1000;background-color: #000; opacity:0.9;}
+.modal-data-protocol {width:600px;margin:100px auto;background-color: #fff;border:1px solid #000;padding:15px;border-radius:5px;height:500px;}
+.modal-data-protocol h3 {font-weight:bold;font-size:16px;text-align:center;}
+.modal-data-protocol .protocol {margin:20px 20px;font-size:14px;}
+.modal-data-protocol .submit {text-align:center;}
 /*注册成功页面*/
 .reg-success {padding:70px 0 60px;}
 .reg-success-title {text-align:center;margin:0 0;}
@@ -132,7 +137,7 @@
 .my-select dl {overflow-y:auto;overflow-x:hidden;zoom:1;border:1px solid #e5e5e5;margin-top:-1px;}
 .my-select dd {height:38px;line-height:38px;padding:0 10px;background:#fff;overflow:hidden;border-top:1px solid #dedede;width:100%;margin-top:-1px;}
 /*登录页面*/
-.login-box {height:533px;background:url(../images/idx-banner-bg.jpg) center 0 no-repeat;}
+.login-box {height:533px;background:url(../images/logbg.jpg) center 0 no-repeat;}
 .login-form {float:right;margin:55px 53px 0 0;background-color:rgba(255,255,255,95);border-radius:4px;width:378px;height:424px;padding:2px;box-shadow:2px -2px 5px #4d91cd;}
 .login-title {height:72px;background-color:#effbff;border-radius:2px 2px 0 0;text-align:center;}
 .login-title h2 {font-size:24px;color:#545454;line-height:72px;}
@@ -147,9 +152,9 @@
 .form-list-submit {margin-bottom:15px;}
 .form-list-submit .btn-red-big {display:block;}
 .go-regist {overflow:hidden;}
-.go-regist .now-regist {display:inline-block;padding-right:23px;font-size:16px;color:#ee1818;background:url(../images/now-reg-btn.png) right center no-repeat;}
+.go-regist .now-regist {display:inline-block;padding-right:23px;font-size:16px;color:#3f6ce1;background:url(../images/now-reg-btn.png) right center no-repeat;}
 /*个人中心*/
-.user-cnt-top {height:190px;background:url(../images/user-cnt-top.jpg) center 0 no-repeat;margin-bottom:30px;}
+.user-cnt-top {height:190px;background:url(../images/bg.jpg) center 0 no-repeat;margin-bottom:30px;}
 .user-cnt-head {float:left;margin:45px 30px 0 20px;width:104px;height:100px;}
 .user-cnt-head img {width:100px;height:100px;border:2px solid #fff;border-radius:50%;box-shadow:0 8px 8px #c6cfd1;}
 .user-cnt-dtl {float:left;width:770px;margin-top:42px;}
@@ -209,23 +214,24 @@
 .team-box-father {position:relative;}
 .program-edit {width:117px;height:30px;margin-top:20px;margin-left:245px;margin-bottom:37px;}
 /* 规则界面 */
-.rule-content {margin-bottom:50px;}
-.rule-con-top {text-align:center;margin:100px 0;}
-.rule-con-top h1 {font-size:48px;margin-bottom:30px;letter-spacing:10px;}
-.rule-con-top p {font-size:21px;font-weight:lighter;letter-spacing:3px;}
+.rule-content {padding-bottom:50px;}
+.rule-con-top {text-align:center;padding:100px 0;}
+.rule-con-top h1 {font-size:48px;margin-bottom:30px;letter-spacing:10px;color:#fff;}
+.rule-con-top p {font-size:21px;font-weight:lighter;letter-spacing:3px;color:#fff;}
 .rule-title {margin-top:40px;margin-bottom:40px;}
 .rule-con-title {width:324px;padding:0 15px;float:left;}
-.rule-con-title h2 {font-size:38px;margin-bottom:10px;margin-top:20px;line-height:1.1;}
+.rule-con-title h2 {font-size:38px;margin-bottom:10px;margin-top:20px;line-height:1.1;color:#fff;}
 .rule-con-tit-line {float:left;width:596px;padding:0 15px;}
 .rule-con-tit-line hr {margin-top:41px;border-top:1px solid #eee;border-bottom:20px;}
 .rule-con-list {width:659px;float:left;padding:0 15px;}
-.rule-con-img {width:460px;float:left;padding:0 15px;}
-.rule-con-content {border-radius:5px;background-color:#ededed;line-height:1.8;padding:18px 40px 5px;margin-top:15px;}
+.rule-con-img {width:460px;float:left;padding:0 15px;text-align:center;}
+.rule-con-img img {vertical-align:middle;}
+.rule-con-content {border-radius:5px;background-color:#fff;line-height:1.8;padding:18px 40px 5px;margin-top:15px;}
 .rule-con-content p {font-size:16px;margin:0 0 10px;}
 /* 数据下载 */
-.data-con-top {text-align:center;margin:80px 0;}
-.data-con-top h1 {font-size:48px;margin-bottom:30px;letter-spacing:10px;}
-.data-box {width:70%;margin-left:15%;margin-right:15%;margin-bottom:80px;}
+.data-con-top {text-align:center;padding:80px 0;}
+.data-con-top h1 {font-size:48px;margin-bottom:30px;letter-spacing:10px;color:#fff;}
+.data-box {width:70%;margin-left:15%;margin-right:15%;padding-bottom:40px;margin-bottom:50px;background-color:rgba(255,255,255,0.8);border-radius:5px;padding-top:20px;}
 .data-box-top {padding:0 20px;}
 .data-box-top a {margin-top:15px;}
 .data-box-top h3{font-size:20px;margin-bottom:10px;margin-top:20px;line-height:1.1;border-bottom:2px solid #ededed;padding-bottom:10px;display:inline-block;}
@@ -247,16 +253,18 @@
 .data-box-table table tr td {font-size:14px;}
 .data-box-table table th {font-size:14px;padding-bottom:5px;color:#000;}
 .data-box-table table .odd {background:#f8faff;}
+.data-box-table table .even {background:#fff;}
 .data-box-page {text-align:center;padding:0 20px;}
-.data-box-page a {border:1px solid #000;padding:8px;margin:0 3px;font-size:14px;}
+.data-box-page a {border:1px solid #000;padding:8px;margin:0 3px;font-size:14px;background:#fff;}
 .data-box-page span {margin-left:10px;font-size:14px;}
 .data-box-page input {width:40px;line-height:30px;text-align:center;border:1px solid #dadada;margin:0 3px;font-size:14px;}
-.data-con-foot {width:70%;margin-left:15%;margin-right:15%;margin-bottom:40px;}
+.data-con-foot {width:70%;margin-left:15%;margin-right:15%;padding-bottom:20px;background-color:rgba(255,255,255,0.8);border-radius:5px;}
 .data-con-foot-link {padding:0 20px;font-size:18px;padding-bottom:10px;}
 .data-con-foot-linkpic {padding:0 20px;text-align:center;padding-top:20px;}
 .linkpic {padding-bottom:30px;}
 .linkpic span {padding:0 30px;}
 .data-box-bottom-null {border-bottom:1px dotted #000;padding:0 20px 20px 20px;margin:0 20px;}
+.hr-20 {height:60px;}
 /* 数据修改 */
 .program-box-intro textarea {border:1px solid #dadada;padding:10px;font-size:14px;line-height:2em;height:150px;margin-top:10px;color:#666;}
 .team-box .nor-inp {width:45px;height:15px;line-height:18px;border:1px solid #dadada;font-size:14px;padding:10px;}
