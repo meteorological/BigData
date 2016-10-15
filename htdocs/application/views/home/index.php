@@ -26,12 +26,12 @@
 			<div class="content-box-title clearfix">
 				<h2>大赛背景</h2>
 			</div>
-			<div class="content-box-content">
+			<div class="content-box-content textindent">
 				<p>深入挖掘气象数据的内在价值，开发气象数据在不同领域的广泛应用，满足更为个性化和精细化的社会气象需求，服务民计民生。</p>
 				<br>
                 <p>上海市教委、华东师范大学、上海市气象局共同举办本次上海市“气象+大数据”应用创新大赛，期待所有数据爱好者、气象爱好者的智慧与力量，期待令你我惊喜的气象数据应用方案。</p>
                 <br>
-                <p>SMDA大赛，等你来赛！</p>
+                <p>上海市气象局首次开发内部气象数据，10万奖金池寻找懂我的你！</p>
 			</div>
 		</div>
 		<div class="content-box">
@@ -143,7 +143,7 @@
 			    	</div>
 			    	<div class="img-box">
 			    		<img src="../../../images/zz.png">
-			    		<span>10名</span>
+			    		<span>10名|1500元</span>
 			    	</div>
 			    </div>
 			</div>

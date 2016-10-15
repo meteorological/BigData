@@ -1,5 +1,5 @@
 @charset "utf-8";
-/*header*/
+/*header-*/
 .header{padding:8px 0 5px;background:#fff;border-bottom:1px solid #e2e2e2;}
 .head-fixed {position:fixed;width:100%;height:50px;left:0;top:0;z-index:9999;}
 .header .wrap {position:relative;}
@@ -27,9 +27,9 @@
 .host-unit em {height:20px;border-left:1px solid #a2b9f4;width:0;margin:120px 30px;}
 .host-unit span.mr30 {margin-right:30px;}
 /*footer*/
-.footer{background:#333;height:196px;overflow:hidden;*zoom:1;}
+.footer{background:#202020;height:196px;overflow:hidden;*zoom:1;}
 .footer .foot-info {float:left;overflow:hidden;*zoom:1;padding-top:20px;}
-.foot-copyright {font-size:18px;color:#939393;margin-top:35px;}
+.foot-copyright {font-size:18px;color:#ffffff;margin-top:45px;}
 .foot-copyright p {margin-bottom:5px;}
 .foot-copyright span {margin-right:22px;}
 .footer .foot-right {float:right;padding-top:45px;padding-right:50px;text-align:right;}
@@ -47,12 +47,13 @@
 .side-tool-bar li.tool-top-link .tool-bar-show a {display:block;height:60px;background:url(../images/tool-top-lnk.png) center center no-repeat;}
 .side-tool-bar li.tool-top-link .tool-bar-show a span {display:none;}
 /*页面内容*/
-.content-main {background-color:#fff;padding-bottom:70px;}
-.content-box {padding-bottom:25px;margin-bottom:23px;border-bottom:2px solid #d3d3d3;background:#fff;}
+.content-main {background-color:#ebebeb;padding-bottom:40px;}
+.content-box {padding-bottom:25px;margin-bottom:63px;border-bottom:2px solid #d3d3d3;background:#fff;}
 .content-box-title {margin-bottom:15px;}
 .content-box-title h2 {float:left;font-size:25px;color:#333;padding-top:25px;padding-left:18px;font-weight:bold;line-height:39px;}
 .content-box-content {padding:0 50px;}
 .content-box-content p {font-size:14px;}
+.textindent p {text-indent:30px;font-size:16px;}
 .schedule-box {margin-top:20px;margin-bottom:70px;min-height:280px;width:49%;}
 .number-1 {background-image: url(../images/number.png);background-position:0 0;width:60px;height:200px;display:inline-block;}
 .number-2 {background-image: url(../images/number.png);background-position:-62px 0;width:60px;height:200px;display:inline-block;}
@@ -72,7 +73,7 @@
 .block-head h3 {font-size:20px;}
 .block-text {width:312px;margin-top:17px;border-top:1px solid #000;font-size:16px;line-height:32px;padding-top:6px;text-align:justify;}
 .medal-box {padding-top:30px;display:block;}
-.img-box {float:left;position:relative;margin:0 40px;width:15%;height:162px;display:block;}
+.img-box {float:left;position:relative;margin:0 50px;width:15%;height:162px;display:block;}
 .img-box img {vertical-align:middle;border:0;max-width:100%;}
 .img-box span {position:absolute;left:0;bottom:29px;width:100%;font-size:20px;color:#fff;text-align:center;font-weight:bold;}
 /*注册页面*/
@@ -216,7 +217,7 @@
 .program-edit {width:117px;height:30px;margin-top:20px;margin-left:245px;margin-bottom:37px;}
 /* 规则界面 */
 .rule-content {padding-bottom:50px;}
-.rule-con-top {text-align:center;padding:100px 0;}
+.rule-con-top {text-align:center;padding-top:130px;padding-bottom:40px;}
 .rule-con-top h1 {font-size:48px;margin-bottom:30px;letter-spacing:10px;color:#fff;}
 .rule-con-top p {font-size:21px;font-weight:lighter;letter-spacing:3px;color:#fff;}
 .rule-title {margin-top:40px;margin-bottom:40px;}
@@ -238,7 +239,7 @@
 .data-box-top h3{font-size:20px;margin-bottom:10px;margin-top:20px;line-height:1.1;border-bottom:2px solid #ededed;padding-bottom:10px;display:inline-block;}
 .data-box-middle {padding:0 20px;margin-top:20px;}
 .data-box-middle-left {display:inline-block;float:left;width:13.2%;margin-top:11px;}
-.label-box {background-color:#00aeee;font-size:18px;color:#fff;padding:15px 25px;}
+.label-box {background-color:#00aeee;font-size:24px;color:#fff;padding:10px 20px;font-weight:bold;}
 .data-box-middle-middle {display:inline-block;float:left;width:40.8%;}
 .data-box-middle-middle h5 {font-size:14px;padding-bottom:5px;}
 .data-box-middle-middle p {font-size:16px;}
@@ -262,8 +263,10 @@
 .data-con-foot {width:70%;margin-left:15%;margin-right:15%;padding-bottom:20px;background-color:rgba(255,255,255,0.8);border-radius:5px;}
 .data-con-foot-link {padding:0 20px;font-size:18px;padding-bottom:10px;}
 .data-con-foot-linkpic {padding:0 20px;text-align:center;padding-top:20px;}
-.linkpic {padding-bottom:30px;}
-.linkpic span {padding:0 30px;}
+.linkpic1 {padding-bottom:30px;}
+.linkpic1 span {padding:0 30px;}
+.linkpic2 {padding-bottom:30px;}
+.linkpic2 span a img{padding:0 30px;}
 .data-box-bottom-null {border-bottom:1px dotted #000;padding:0 20px 20px 20px;margin:0 20px;}
 .hr-20 {height:60px;}
 /* 数据修改 */

@@ -16,18 +16,18 @@
 <div class="header head-fixed">
   <div class="wrap clearfix">
   	<div class="head_logo fl">
-  	    <a href="index.html" class="logo"><img src="<?= site_url('images/logo.png')?>"></a>
+  	    <a href="<?= site_url('bigdata/index')?>" class="logo"><img src="<?= site_url('images/logo.png')?>"></a>
   	</div>
     <div class="fr">
         <div class="head_side fl">
             <ul class="main_nav clearfix">
-                <li class="fl"><a href="#">MDA大赛</a>
+                <li class="fl"><a href="<?= site_url('bigdata/index')?>">MDA大赛</a>
                 </li>
                 <li class="fl">
                     <a href="#">大赛规则</a>
                 </li>
                 <li class="fl"><a href="#">比赛数据</a></li>
-                <li class="fl"><a href="#">报名通道</a>
+                <li class="fl"><a href="<?= site_url('bigdata/enter')?>">报名通道</a>
                 </li>
             </ul>
         </div>
