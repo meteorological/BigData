@@ -5,6 +5,7 @@
 .header .wrap {position:relative;}
 .head_logo{}
 .head_logo .logo{width:230px;height:44px;}
+.logo-box .logo {width:230px;height:44px;}
 .head_logo .logo img{display:block;border:none;}
 .head_side{width:655px;}
 .main_nav{margin-left:80px;}
