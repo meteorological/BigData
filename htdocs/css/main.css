@@ -292,3 +292,36 @@
 .user-wp-title1 i {color:red;}
 .user-wp-title1 em {font-size:14px;color:red;}
 .finish {margin-bottom:60px;margin-top:40px;margin-left:180px;}
+/* 管理员界面 */
+.admin-box-table {padding:0 20px;margin-top:80px;text-align:left;margin-bottom:50px;}
+.admin-box-table table {width:100%;text-align:center;color:#666;}
+.admin-box-table table tr {height:40px;border-bottom:1px solid #ededed;}
+.admin-box-table table tr td {font-size:14px;}
+.admin-box-table table th {font-size:14px;padding-bottom:5px;color:#000080;background-color:#87CEFA;}
+.admin-box-table table .odd {background:#f8faff;}
+.admin-box-table table .even {background:#fff;}
+.admin-box-page {text-align:center;padding:0 20px;}
+.admin-box-page a {border:1px solid #000;padding:8px;margin:0 3px;font-size:14px;background:#fff;}
+.admin-box-page span {margin-left:10px;font-size:14px;}
+.admin-box-page input {width:40px;line-height:30px;text-align:center;border:1px solid #dadada;margin:0 3px;font-size:14px;}
+/* 打分界面 */
+.hr-10 {margin-top:20px;}
+.hr-80 {height:80px;}
+.evaluate-l {float:left;width:720px;}
+.evaluate-title {padding:15px 0;border-bottom:1px solid #e5e5e5;}
+.evaluate-name {float:left;font-size:24px;color:#333;padding-left:10px;}
+.evaluate-form table {width:100%;text-align:center;color:#666;margin-top:20px;}
+.evaluate-form table tr {}
+.evaluate-form table tr td {font-size:14px;border:1px solid #aaa;padding:15px;}
+.evaluate-form table th {font-size:16px;padding:15px;color:#000;border:1px solid #aaa;}
+.evaluate-form table td input {border:none;text-align:center;font-size:16px;padding:5px;color:red;}
+.evaluate-r {float:right;width:400px;}
+.advice-box-father {position:relative;}
+.advice-box {border:1px solid #efefef;background:#efefef;border-radius:3px;border-bottom:30px;overflow:hidden;margin-bottom:40px;}
+.advice-box h4 {height:50px;background:#efefef;line-height:50px;font-size:16px;color:#333;font-weight:bold;padding:0 12px;border-radius:3px 3px 0 0;}
+.advice-box textarea {border:1px solid #dadada;padding:10px;font-size:14px;line-height:1.5em;height:150px;width:375px;}
+.advice-edit {width:117px;height:30px;margin-top:20px;margin-left:245px;margin-bottom:37px;}
+.evaluate-note {margin-top:20px;}
+.evaluate-note p {font-size:14px;font-weight:bold;}
+.advice-content {padding-left:20px;padding-right:20px;font-size:14px;background-color:#f8faff;height:129px;padding-top:10px;}
+.advice-content p {font-size:14px;}
